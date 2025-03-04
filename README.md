@@ -34,7 +34,7 @@ After extensive search for a reliable API, I created a custom scraper bot to col
 - **Book Library**: Browse and read summarized self-help books
 - **Psychological Tests**: Take scientifically-designed assessments
 - **Progress Tracking**: Track reading progress and test results
-- **User Dashboard**: Visualize self-improvement journey
+- 
 - **Share Results**: Social sharing capabilities
 
 ### Libraries & Tools
@@ -53,6 +53,7 @@ After extensive search for a reliable API, I created a custom scraper bot to col
 - **Expanded Functionality**: Add audiobook integration and note-taking features
 - **Improved Book Summaries**: Implement more nuanced chapter generation algorithms
 - **User Personalization**: Add customized recommendations based on test results and reading history
+- **User Dashboard**: Visualize self-improvement journey
 
 ### Market Potential
 This application has significant potential in the self-improvement space by uniquely combining:
