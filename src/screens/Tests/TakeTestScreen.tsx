@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView, ImageBackground, Animated } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import Button from '../../components/Button';
 import { TEST_QUESTIONS } from '../../data/quizData';
+import { Question } from '../../types';
+import Speedometer from '../../components/Speedometer';
 
 type TestsStackParamList = {
   TestsOverview: undefined;
@@ -23,7 +25,6 @@ const TakeTestScreen = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  const [fadeAnim] = useState(new Animated.Value(1));
   const [error, setError] = useState<string | null>(null);
   
   const questions = TEST_QUESTIONS[testId] || [];
@@ -37,12 +38,6 @@ const TakeTestScreen = () => {
     }
   }, [testId, questions]);
 
-  // Function to clean option text by removing value/score information
-  const cleanOptionText = (text: string): string => {
-    return text.replace(/\s*\(\d+\)$/, '')
-              .replace(/\s*,.*\(\d+\)$/, '');
-  };
-  
   const handleOptionSelect = (value: number) => {
     if (!currentQuestion) return;
     
@@ -55,30 +50,19 @@ const TakeTestScreen = () => {
     };
     setAnswers(newAnswers);
     
-    // Animate fade out
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 200,
-      useNativeDriver: true,
-    }).start(() => {
-      // Move to next question or finish
+    // Short delay before moving to next question
+    setTimeout(() => {
       if (currentQuestionIndex < totalQuestions - 1) {
         setCurrentQuestionIndex(prev => prev + 1);
         setSelectedOption(null);
-        // Animate fade in
-        Animated.timing(fadeAnim, {
-          toValue: 1,
-          duration: 200,
-          useNativeDriver: true,
-        }).start();
       } else {
-        // Navigate to results
+        // Navigate to results with all answers
         navigation.navigate('TestResult', { 
           testId,
           answers: newAnswers
         });
       }
-    });
+    }, 300);
   };
 
   const handleBack = () => {
@@ -139,32 +123,35 @@ const TakeTestScreen = () => {
       <SafeAreaView style={styles.safeArea}>
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity onPress={handleBack} style={styles.backButton}>
-            <Text style={styles.backButtonText}>←</Text>
-          </TouchableOpacity>
-          <Text style={styles.progress}>
-            Question {currentQuestionIndex + 1}/{totalQuestions}
-          </Text>
-          <TouchableOpacity onPress={handleClose} style={styles.closeButton}>
-            <Text style={styles.closeButtonText}>✕</Text>
-          </TouchableOpacity>
+          <View style={styles.headerContent}>
+            <TouchableOpacity 
+              onPress={handleBack} 
+              style={styles.iconButton}
+            >
+              <Text style={styles.backButtonText}>←</Text>
+            </TouchableOpacity>
+            
+            <Text style={styles.progress}>Question {currentQuestionIndex + 1}/{totalQuestions}</Text>
+            
+            <TouchableOpacity 
+              onPress={handleClose} 
+              style={styles.iconButton}
+            >
+              <Text style={styles.closeButtonText}>✕</Text>
+            </TouchableOpacity>
+          </View>
         </View>
         
-        <Animated.View 
-          style={[
-            styles.contentContainer,
-            { opacity: fadeAnim }
-          ]}
-        >
+        <View style={styles.contentContainer}>
           {/* Question */}
           <View style={styles.questionContainer}>
-            <Text style={styles.questionText}>{currentQuestion.text}</Text>
+            <Text style={styles.questionText}>{currentQuestion?.text || ''}</Text>
           </View>
           
-          {/* Options Container - Centered */}
+          {/* Options Container */}
           <View style={styles.optionsOuterContainer}>
             <View style={styles.optionsContainer}>
-              {currentQuestion.options.map((option, index) => (
+              {currentQuestion?.options.map((option, index) => (
                 <TouchableOpacity
                   key={index}
                   style={[
@@ -177,13 +164,13 @@ const TakeTestScreen = () => {
                     styles.optionText,
                     selectedOption === option.value && styles.selectedOptionText,
                   ]}>
-                    {cleanOptionText(option.text)}
+                    {option.text}
                   </Text>
                 </TouchableOpacity>
               ))}
             </View>
           </View>
-        </Animated.View>
+        </View>
       </SafeAreaView>
     </ImageBackground>
   );
@@ -197,31 +184,45 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    paddingTop: 8,
+  },
+  headerContent: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
-    paddingTop: 8,
-    paddingBottom: 16,
+    paddingVertical: 8,
   },
-  backButton: {
-    padding: 8,
+  iconButton: {
+    width: 32,
+    height: 32,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   backButtonText: {
-    fontSize: 24,
+    fontSize: 18,
     color: '#333',
-  },
-  closeButton: {
-    padding: 8,
+    lineHeight: 20,
   },
   closeButtonText: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#333',
+    lineHeight: 20,
   },
   progress: {
     fontSize: 16,
-    fontWeight: '600',
     color: '#333',
+    fontWeight: '500',
   },
   contentContainer: {
     flex: 1,
@@ -241,11 +242,10 @@ const styles = StyleSheet.create({
   optionsOuterContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    paddingBottom: 32,
   },
   optionsContainer: {
     width: '100%',
-    maxWidth: 320,
   },
   optionButton: {
     backgroundColor: 'white',
@@ -254,12 +254,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     borderColor: '#E5E5E5',
-    minHeight: 60, // Fixed height for all options
+    minHeight: 56,
     justifyContent: 'center',
   },
   selectedOption: {
-    backgroundColor: '#0099CC',
     borderColor: '#0099CC',
+    borderWidth: 2,
   },
   optionText: {
     fontSize: 16,
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   selectedOptionText: {
-    color: 'white',
+    color: '#0099CC',
   },
   errorContainer: {
     flex: 1,

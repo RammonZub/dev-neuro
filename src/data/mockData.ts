@@ -44,33 +44,33 @@ export const TESTS: Test[] = [
   },
 ];
 
-// Mock Questions Data
-export const TEST_QUESTIONS: Record<string, Question[]> = {
-  '1': [
-    {
-      id: '1',
-      question: 'You are invited to a cultural event. What do you do?',
-      options: [
-        { id: 'a', text: 'Go and enjoy it' },
-        { id: 'b', text: 'Go if friends are going' },
-        { id: 'c', text: 'Think about it' },
-        { id: 'd', text: 'Go if friends are going' },
-      ],
-    },
-    {
-      id: '2',
-      question: 'How do you handle unexpected changes to your plans?',
-      options: [
-        { id: 'a', text: 'Adapt quickly and move on' },
-        { id: 'b', text: 'Feel frustrated but adjust' },
-        { id: 'c', text: 'Struggle to adapt' },
-        { id: 'd', text: 'Depends on the situation' },
-      ],
-    },
-    // Add more questions as needed
-  ],
-  // Add questions for other tests
-};
+// // Mock Questions Data
+// export const TEST_QUESTIONS: Record<string, Question[]> = {
+//   '1': [
+//     {
+//       id: '1',
+//       question: 'You are invited to a cultural event. What do you do?',
+//       options: [
+//         { text: 'Go and enjoy it', value: 3 },
+//         { text: 'Go if friends are going', value: 2 },
+//         { text: 'Think about it', value: 1 },
+//         { text: 'Go if friends are going', value: 2 },
+//       ],
+//     },
+//     {
+//       id: '2',
+//       question: 'How do you handle unexpected changes to your plans?',
+//       options: [
+//         { text: 'Adapt quickly and move on', value: 3 },
+//         { text: 'Feel frustrated but adjust', value: 2 },
+//         { text: 'Struggle to adapt', value: 1 },
+//         { text: 'Depends on the situation', value: 2 },
+//       ],
+//     },
+//     // Add more questions as needed
+//   ],
+//   // Add questions for other tests
+// };
 
 // Mock Test Results
 export const TEST_RESULTS: Record<string, TestResult> = {
@@ -85,74 +85,74 @@ export const TEST_RESULTS: Record<string, TestResult> = {
   // Add results for other tests
 };
 
-// Mock Books Data
-export const BOOKS: Book[] = [
-  {
-    id: '1',
-    title: 'Mindshift',
-    author: 'Erwin Raphael McManus',
-    image: require('../assets/images/mindshift_cover.png'),
-    tags: ['Cognitive Science', 'Psychology', 'IQ Development'],
-    chapters: 7,
-    duration: 10,
-    description: 'Explore how to transform your thinking and unlock your full potential.',
-  },
-  {
-    id: '2',
-    title: 'Mindshift',
-    author: 'Erwin Raphael McManus',
-    image: require('../assets/images/mindshift_cover.png'),
-    tags: ['Cognitive Science', 'Psychology'],
-    chapters: 7,
-    duration: 10,
-    description: 'Explore how to transform your thinking and unlock your full potential.',
-  },
-  {
-    id: '3',
-    title: 'Mindshift',
-    author: 'Erwin Raphael McManus',
-    image: require('../assets/images/mindshift_cover.png'),
-    tags: ['Cognitive Science', 'Psychology'],
-    chapters: 7,
-    duration: 10,
-    description: 'Explore how to transform your thinking and unlock your full potential.',
-  },
-  {
-    id: '4',
-    title: 'Mindshift',
-    author: 'Erwin Raphael McManus',
-    image: require('../assets/images/mindshift_cover.png'),
-    tags: ['Cognitive Science', 'Psychology'],
-    chapters: 7,
-    duration: 10,
-    description: 'Explore how to transform your thinking and unlock your full potential.',
-  },
-];
+// // Mock Books Data
+// export const BOOKS: Book[] = [
+//   {
+//     id: '1',
+//     title: 'Mindshift',
+//     author: 'Erwin Raphael McManus',
+//     image: require('../assets/images/mindshift_cover.png'),
+//     tags: ['Cognitive Science', 'Psychology', 'IQ Development'],
+//     chapters: 7,
+//     duration: 10,
+//     description: 'Explore how to transform your thinking and unlock your full potential.',
+//   },
+//   {
+//     id: '2',
+//     title: 'Mindshift',
+//     author: 'Erwin Raphael McManus',
+//     image: require('../assets/images/mindshift_cover.png'),
+//     tags: ['Cognitive Science', 'Psychology'],
+//     chapters: 7,
+//     duration: 10,
+//     description: 'Explore how to transform your thinking and unlock your full potential.',
+//   },
+//   {
+//     id: '3',
+//     title: 'Mindshift',
+//     author: 'Erwin Raphael McManus',
+//     image: require('../assets/images/mindshift_cover.png'),
+//     tags: ['Cognitive Science', 'Psychology'],
+//     chapters: 7,
+//     duration: 10,
+//     description: 'Explore how to transform your thinking and unlock your full potential.',
+//   },
+//   {
+//     id: '4',
+//     title: 'Mindshift',
+//     author: 'Erwin Raphael McManus',
+//     image: require('../assets/images/mindshift_cover.png'),
+//     tags: ['Cognitive Science', 'Psychology'],
+//     chapters: 7,
+//     duration: 10,
+//     description: 'Explore how to transform your thinking and unlock your full potential.',
+//   },
+// ];
 
-// Mock Chapters Data
-export const BOOK_CHAPTERS: Record<string, Chapter[]> = {
-  '1': [
-    {
-      id: '1',
-      title: 'Intelligence is not fixed but can be developed through consistent practice and the right methods',
-      content: [
-        'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
-        'Recent research has shown that intelligence is far more malleable than previously thought. The brain\'s plasticity allows for continuous growth and adaptation throughout our lives.',
-        'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
-        'Recent research has shown that intelligence is far more malleable than previously thought. The brain\'s plasticity allows for continuous growth and adaptation throughout our lives.',
-        'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
-      ],
-    },
-    {
-      id: '2',
-      title: 'The role of neuroplasticity in cognitive development',
-      content: [
-        'Neuroplasticity refers to the brain\'s ability to reorganize itself by forming new neural connections. This ability continues throughout life but is especially pronounced during development.',
-        'Learning new skills creates new neural pathways. The more these pathways are used, the stronger they become, leading to improved performance and retention.',
-        'Various factors influence neuroplasticity, including age, environment, lifestyle, and genetics. However, even adults can significantly enhance their cognitive abilities through targeted practice.',
-      ],
-    },
-    // Add more chapters as needed
-  ],
-  // Add chapters for other books
-}; 
+// // Mock Chapters Data
+// export const BOOK_CHAPTERS: Record<string, Chapter[]> = {
+//   '1': [
+//     {
+//       id: '1',
+//       title: 'Intelligence is not fixed but can be developed through consistent practice and the right methods',
+//       content: [
+//         'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
+//         'Recent research has shown that intelligence is far more malleable than previously thought. The brain\'s plasticity allows for continuous growth and adaptation throughout our lives.',
+//         'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
+//         'Recent research has shown that intelligence is far more malleable than previously thought. The brain\'s plasticity allows for continuous growth and adaptation throughout our lives.',
+//         'Pattern recognition and problem-solving abilities are key indicators of cognitive development. Environmental factors play a crucial role in shaping intellectual capacity.',
+//       ],
+//     },
+//     {
+//       id: '2',
+//       title: 'The role of neuroplasticity in cognitive development',
+//       content: [
+//         'Neuroplasticity refers to the brain\'s ability to reorganize itself by forming new neural connections. This ability continues throughout life but is especially pronounced during development.',
+//         'Learning new skills creates new neural pathways. The more these pathways are used, the stronger they become, leading to improved performance and retention.',
+//         'Various factors influence neuroplasticity, including age, environment, lifestyle, and genetics. However, even adults can significantly enhance their cognitive abilities through targeted practice.',
+//       ],
+//     },
+//     // Add more chapters as needed
+//   ],
+//   // Add chapters for other books
+// }; 

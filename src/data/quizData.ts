@@ -18,27 +18,42 @@ const quizImages = {
 
 // Transform quiz data to match our types
 const transformQuestions = (items: any[]): Question[] => {
-  return items.map(item => ({
-    id: item.id,
-    text: item.text,
-    domain: item.domain,
-    reverse_scored: item.reverse_scored,
-    options: Array.isArray(item.options) 
-      ? item.options.map((opt: any, index: number): QuestionOption => {
+  return items.map(item => {
+    // Handle options based on different quiz formats
+    let transformedOptions: QuestionOption[] = [];
+    
+    if (Array.isArray(item.options)) {
+      if (typeof item.options[0] === 'string' && Array.isArray(item.optionValues)) {
+        // Handle ADHD quiz format where options are strings and values are in optionValues
+        transformedOptions = item.options.map((text: string, index: number) => ({
+          text: text,
+          value: item.optionValues[index] || 0
+        }));
+      } else {
+        // Handle other quiz formats where options are objects with text and value
+        transformedOptions = item.options.map((opt: any) => {
           if (typeof opt === 'string') {
-            // Handle ADHD quiz format
             return {
               text: opt,
-              value: item.optionValues[index],
+              value: 1
             };
           }
           return {
-            text: opt.text,
-            value: opt.value,
+            text: opt.text.replace(/\s*\(\d+\)$/, ''), // Remove score annotations like (4) from text
+            value: opt.value
           };
-        })
-      : [],
-  }));
+        });
+      }
+    }
+
+    return {
+      id: item.id,
+      text: item.text,
+      domain: item.domain || '',
+      reverse_scored: item.reverse_scored || false,
+      options: transformedOptions
+    };
+  });
 };
 
 const transformScoringRules = (scoring: any): ScoringRules => {

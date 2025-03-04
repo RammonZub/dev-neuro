@@ -133,8 +133,6 @@ const styles = StyleSheet.create({
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginHorizontal: 1,
   },
 });
 

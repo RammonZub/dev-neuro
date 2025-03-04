@@ -41,18 +41,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderRadius: 12,
     overflow: 'hidden',
-    marginBottom: 16, // Increased margin
+    marginBottom: 5, // Increased margin
   },
   imageContainer: {
     width: '100%',
-    height: itemWidth * 0.8, // Increased height ratio
+    height: 150, // Increased height ratio
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
     overflow: 'hidden',
   },
   image: {
-    width: '95%', // Increased width
-    height: '95%', // Increased height
+    width: 140, // Increased width
+    height: 160, // Increased height
     resizeMode: 'contain',
     alignSelf: 'center',
   },
@@ -60,14 +60,16 @@ const styles = StyleSheet.create({
     padding: 10, // Increased padding
   },
   title: {
-    fontSize: 14, // Increased font size
+    fontSize: 12, // Increased font size
     fontWeight: '600',
     marginBottom: 4, // Increased margin
     color: '#333',
+    textAlign: 'center',
   },
   info: {
     fontSize: 10, // Increased font size
     color: '#8E8E93',
+    textAlign: 'center',
   },
 });
 

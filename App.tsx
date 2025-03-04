@@ -16,7 +16,7 @@ import 'react-native-gesture-handler';
 import TestsScreen from './src/screens/Tests/TestsScreen';
 import TakeTestScreen from './src/screens/Tests/TakeTestScreen';
 import TestResultScreen from './src/screens/Tests/TestResultScreen';
-import LearnScreen from './src/screens/Learn/LearnScreen';
+import BooksScreen from './src/screens/Learn/BooksScreen';
 import ReadBookScreen from './src/screens/Learn/ReadBookScreen';
 import BookResultScreen from './src/screens/Learn/BookResultScreen';
 
@@ -41,7 +41,7 @@ function TestsStackScreen() {
 function LearnStackScreen() {
   return (
     <LearnStack.Navigator screenOptions={{ headerShown: false }}>
-      <LearnStack.Screen name="BooksOverview" component={LearnScreen} />
+      <LearnStack.Screen name="BooksOverview" component={BooksScreen} />
       <LearnStack.Screen name="ReadBook" component={ReadBookScreen} />
       <LearnStack.Screen name="BookResult" component={BookResultScreen} />
     </LearnStack.Navigator>

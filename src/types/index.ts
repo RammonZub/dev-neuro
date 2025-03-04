@@ -82,12 +82,24 @@ export interface ScoringRules {
 export interface Book {
   id: string;
   title: string;
+  subtitle: string;
   author: string;
-  image: any; // Replace with proper type when assets are available
-  tags: string[];
-  chapters: number;
-  duration: number;
-  description: string;
+  rating: string;
+  num_ratings: string;
+  publication_year: string;
+  abstract: string;
+  image_url: string;
+  image?: any; // For backward compatibility
+  tags?: string[]; // For backward compatibility
+  duration?: number; // For backward compatibility
+  description?: string; // For backward compatibility
+  genres: string[];
+  author_description: string;
+  source_list: string;
+  index: number;
+  is_self_help: boolean;
+  chapters?: number;
+  readingTime?: string;
 }
 
 export interface Chapter {
