@@ -1,6 +1,97 @@
-# Neuro App
+# Neuro: Ramon Zubiaga Application 
 
-A React Native application for mental health assessments and educational content.
+## Data Generation Approach
+
+### Book Collection (3,000 Books)
+After extensive search for a reliable API, I created a custom scraper bot to collect data from Goodreads:
+- Scraped over 5,000 books and filtered down to a clean dataset of 3,000 books
+- Discovered pagination bypass: While Goodreads restricts pagination for non-signed users, book lists allowed indirect access
+- Extracted comprehensive metadata (titles, authors, ratings, genres) with high accuracy
+
+### Generator Pipelines
+
+#### `bookGenerator.js`
+- **Prompt Engineering**: Developed a sophisticated prompt that generates unique chapter summaries with varied writing styles
+- **Quality Control**: Implemented validation to ensure proper JSON formatting and content uniqueness
+- **Structure**: Each book includes title, author, subtitle, abstract, author description, and chapter summaries (~600 words total)
+- **Processing**: Added batch processing with configurable options and proper error handling
+
+#### `testGenerator.js`
+- **Research-Based Approach**: Conducted in-depth research using Perplexity AI and other sources to identify scientific methods for psychological test design
+- **Test Customization**: Implemented domain-specific prompts for different assessment types (ADHD, anxiety, emotional intelligence)
+- **Validation**: Created comprehensive validation to ensure test questions follow proper psychological assessment standards
+- **Scoring System**: Implemented reverse-scoring and appropriate interpretation ranges based on psychological research
+
+## App Structure
+
+### Core Components
+- **Navigation**: React Navigation with tab and stack navigators
+- **UI Framework**: Custom components built with React Native core components
+- **State Management**: Context API for global state
+- **Data Storage**: Local storage with AsyncStorage for progress tracking
+
+### Key Features
+- **Book Library**: Browse and read summarized self-help books
+- **Psychological Tests**: Take scientifically-designed assessments
+- **Progress Tracking**: Track reading progress and test results
+- **User Dashboard**: Visualize self-improvement journey
+- **Share Results**: Social sharing capabilities
+
+### Libraries & Tools
+- React Native
+- React Navigation
+- Firebase Authentication & Firestore
+- AsyncStorage
+- Axios for API calls
+- React Native SVG for vector graphics
+- Replicate API for AI integration
+
+## Future Improvements
+
+### Recommended Enhancements
+- **UI Refinement**: Further polish the user interface for a more premium feel
+- **Expanded Functionality**: Add audiobook integration and note-taking features
+- **Improved Book Summaries**: Implement more nuanced chapter generation algorithms
+- **User Personalization**: Add customized recommendations based on test results and reading history
+
+### Market Potential
+This application has significant potential in the self-improvement space by uniquely combining:
+- Psychological assessments with AI analysis
+- Gamified incentives to encourage continued engagement
+- Condensed book summaries for efficient knowledge acquisition
+- Data-driven insights to personalize the self-improvement journey
+
+## Running the Project
+
+```bash
+# Install dependencies
+npm install
+
+# Start the Metro bundler
+npx react-native start
+
+# Run on iOS
+npx react-native run-ios
+
+# Run on Android
+npx react-native run-android
+```
+
+## Project Structure
+```
+src/
+├── assets/           # Images, SVGs, and other static assets
+├── components/       # Reusable UI components
+├── DataPipelines/    # Data generation scripts
+├── data/             # JSON data files for books and tests
+├── navigation/       # Navigation configuration
+├── screens/          # Screen components
+│   ├── Learn/        # Book-related screens
+│   └── Tests/        # Test-related screens
+├── services/         # API and Firebase services
+├── styles/           # Global styles and themes
+└── utils/            # Utility functions
+```
 
 ## Features
 
@@ -19,21 +110,6 @@ A React Native application for mental health assessments and educational content
 - **Read Book**: Chapter-by-chapter reading experience
 - **Book Result**: Completion screen with reading stats and rating
 
-## Project Structure
-
-```
-src/
-├── assets/           # Images, fonts, and other static assets
-├── components/       # Reusable UI components
-├── data/             # Mock data and API functions
-├── screens/          # Screen components
-│   ├── Tests/        # Test-related screens
-│   └── Learn/        # Learn-related screens
-├── theme/            # Theme configuration (colors, typography, etc.)
-├── types/            # TypeScript type definitions
-└── utils/            # Utility functions
-```
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -44,63 +120,3 @@ src/
 - Xcode (for iOS development)
 - Android Studio (for Android development)
 
-### Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/neuro.git
-   cd neuro
-   ```
-
-2. Install dependencies:
-   ```
-   npm install
-   # or
-   yarn install
-   ```
-
-3. Install iOS dependencies:
-   ```
-   cd ios && pod install && cd ..
-   ```
-
-4. Start the Metro bundler:
-   ```
-   npm start
-   # or
-   yarn start
-   ```
-
-5. Run the app:
-   ```
-   # For iOS
-   npm run ios
-   # or
-   yarn ios
-
-   # For Android
-   npm run android
-   # or
-   yarn android
-   ```
-
-## Firebase Setup
-
-1. Create a Firebase project at [firebase.google.com](https://firebase.google.com)
-2. Add iOS and Android apps to your Firebase project
-3. Download the configuration files:
-   - `GoogleService-Info.plist` for iOS
-   - `google-services.json` for Android
-4. Place the configuration files in their respective directories:
-   - iOS: `/ios/Neuro/GoogleService-Info.plist`
-   - Android: `/android/app/google-services.json`
-
-## Replicate API Integration
-
-1. Sign up for a Replicate account at [replicate.com](https://replicate.com)
-2. Create an API key
-3. Add your API key to the Firebase project as a secure environment variable
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
