@@ -1,0 +1,601 @@
+{
+    "metadata": {
+        "assessment_type": "Adult Anxiety Screener",
+        "version": "1.0",
+        "normative_data": "Based on current evidence from validated anxiety assessment studies"
+    },
+    "items": [
+        {
+            "id": "ANX01",
+            "text": "Over the past two weeks, how often have you felt nervous or on edge in social situations?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX02",
+            "text": "How frequently have you found it difficult to control worries about various things, like work or personal relationships?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX03",
+            "text": "In the past two weeks, how often have you felt physically tense, such as having tight muscles or a clenched jaw?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX04",
+            "text": "During the past two weeks, how often have you felt restless, as if you were unable to sit still?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX05",
+            "text": "How often have you felt easily annoyed or irritable with others over the last two weeks?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX06",
+            "text": "In recent weeks, how often have you found it hard to relax even in calm environments?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX07",
+            "text": "How often have you had trouble concentrating on tasks because of worry in the past two weeks?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX08",
+            "text": "Over the past two weeks, how often have you experienced physical symptoms like rapid heartbeat or sweating without a clear cause?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX09",
+            "text": "How frequently have you felt an overwhelming urge to avoid situations that make you anxious?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX10",
+            "text": "In the past two weeks, how often have you had difficulty falling asleep or staying asleep due to racing thoughts?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX11",
+            "text": "How often have you felt calmer than usual in situations that typically make others nervous?",
+            "domain": "Validity Check",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 4
+                },
+                {
+                    "text": "Rarely",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 1
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "ANX12",
+            "text": "How often have you felt completely at ease in crowded places over the last two weeks?",
+            "domain": "Validity Check",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 4
+                },
+                {
+                    "text": "Rarely",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 1
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "ANX13",
+            "text": "How often have you found yourself worrying about things that you know you should not be concerned about?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX14",
+            "text": "In the past two weeks, how frequently have you felt as if something awful might happen, even when there is no reason to think so?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX15",
+            "text": "How often have you experienced moments of panic without apparent cause over the past two weeks?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX16",
+            "text": "During the last two weeks, how often have you felt that you were unable to cope with daily stressors?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX17",
+            "text": "How frequently have you felt fatigued or worn out due to anxiety in the past two weeks?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX18",
+            "text": "In the last two weeks, how often have you found yourself over-preparing for events due to nervousness?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX19",
+            "text": "How often have you felt overwhelmed by your responsibilities over the past two weeks?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "ANX20",
+            "text": "During the last two weeks, how often have you felt an urge to escape from uncomfortable situations?",
+            "domain": "Core Anxiety",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Not at all",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes",
+                    "value": 2
+                },
+                {
+                    "text": "Often",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly every day",
+                    "value": 4
+                }
+            ]
+        }
+    ],
+    "scoring": {
+        "symptom_cutoffs": {
+            "core_anxiety": 10,
+            "validity": 2
+        },
+        "interpretation": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "result": "Low anxiety",
+                "recommendation": "Your responses indicate minimal anxiety symptoms."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "result": "Moderate anxiety",
+                "recommendation": "Your responses suggest moderate anxiety; consider monitoring your symptoms and seeking guidance if they worsen."
+            },
+            {
+                "range": [
+                    21,
+                    40
+                ],
+                "result": "High anxiety",
+                "recommendation": "Your responses indicate high anxiety levels; a professional evaluation is recommended."
+            }
+        ]
+    }
+}

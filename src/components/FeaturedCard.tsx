@@ -39,7 +39,7 @@ const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: 220,
+    height: 270,
     borderRadius: 16,
     overflow: 'hidden',
     marginBottom: 20,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     width: '100%',
     height: '100%',
-    position: 'absolute',
+    position: 'absolute'
   },
   overlay: {
     flex: 1,
@@ -61,21 +61,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
-    marginTop: 30,
+    marginTop: 55,
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.2)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   infoContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'white',
     paddingVertical: 4,
     paddingHorizontal: 10,
     borderRadius: 20,
     alignSelf: 'center',
   },
   infoText: {
-    color: 'white',
+    color: '#333',
     fontSize: 12,
     fontWeight: '500',
   },
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 12,
     paddingHorizontal: 20,
-    borderRadius: 25,
+    borderRadius: 12,
     marginHorizontal: 0,
     marginBottom: 16,
     width: '100%',

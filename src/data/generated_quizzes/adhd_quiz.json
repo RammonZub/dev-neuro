@@ -1,0 +1,401 @@
+{
+    "metadata": {
+        "assessment_type": "Adult ADHD Screener",
+        "version": "1.0",
+        "normative_data": "Based on current evidence from validated ADHD assessment studies"
+    },
+    "items": [
+        {
+            "id": "IA01",
+            "text": "During tasks that require sustained mental effort, how often do you find your mind wandering to unrelated thoughts?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA02",
+            "text": "In the past 6 months, how frequently have you overlooked details in important projects or assignments?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA03",
+            "text": "When listening to conversations or instructions, how often do you struggle to stay focused?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA04",
+            "text": "How often do you find yourself misplacing everyday items, such as keys or a phone, even when you are careful?",
+            "domain": "Inattention",
+            "reverse_scored": true,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                4,
+                3,
+                2,
+                1,
+                0
+            ]
+        },
+        {
+            "id": "IA05",
+            "text": "During the past week, how frequently have you found it difficult to organize tasks or activities?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA06",
+            "text": "How often do you lose focus when reading a book or watching a film?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA07",
+            "text": "In work settings, how often do you fail to follow through on instructions, resulting in unfinished tasks?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA08",
+            "text": "How frequently do you find yourself daydreaming during important meetings or discussions?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA09",
+            "text": "In day-to-day activities, how often do you make careless mistakes?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA10",
+            "text": "During conversations, how often do you find it difficult to pay close attention to what others are saying?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "IA11",
+            "text": "How often do you forget appointments or social commitments, even when they are important?",
+            "domain": "Inattention",
+            "reverse_scored": true,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                4,
+                3,
+                2,
+                1,
+                0
+            ]
+        },
+        {
+            "id": "IA12",
+            "text": "In the past month, how frequently have you felt overwhelmed by tasks that require attention to detail?",
+            "domain": "Inattention",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI01",
+            "text": "During meetings, how frequently do you feel restless or fidgety?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI02",
+            "text": "How often do you find it challenging to remain seated for extended periods?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI03",
+            "text": "In social settings, how often do you interrupt others or finish their sentences?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI04",
+            "text": "How frequently do you talk excessively in situations where it may not be appropriate?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI05",
+            "text": "How often do you act on impulse without considering the consequences?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": "HI06",
+            "text": "In the past week, how frequently have you felt the urge to move around or pace when it was inappropriate?",
+            "domain": "Hyperactivity/Impulsivity",
+            "reverse_scored": false,
+            "options": [
+                "Never",
+                "Rarely",
+                "Sometimes",
+                "Often",
+                "Very Often"
+            ],
+            "optionValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "scoring": {
+        "symptom_cutoffs": {
+            "inattention": 6,
+            "hyperactivity": 4
+        },
+        "interpretation": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "result": "Low likelihood of ADHD",
+                "recommendation": "Your responses suggest minimal ADHD symptoms."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "result": "Moderate likelihood of ADHD",
+                "recommendation": "Your responses indicate moderate symptoms; consider professional evaluation."
+            },
+            {
+                "range": [
+                    21,
+                    40
+                ],
+                "result": "High likelihood of ADHD",
+                "recommendation": "Your responses suggest significant ADHD symptoms; we recommend seeking a clinical assessment."
+            }
+        ]
+    }
+}

@@ -1,0 +1,603 @@
+{
+    "metadata": {
+        "assessment_type": "Temperament Type Quiz",
+        "version": "1.0",
+        "normative_data": "Based on validated temperament assessment research and clinical data"
+    },
+    "items": [
+        {
+            "id": "T01",
+            "text": "In social settings, how frequently do you initiate conversations even when you feel uncertain?",
+            "domain": "Sociability",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never initiate conversations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely initiate conversations (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes initiate conversations (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often initiate conversations (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always take the lead in starting conversations (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T02",
+            "text": "How often do you seek out new experiences and challenges, even if they involve some risk?",
+            "domain": "Novelty Seeking",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I avoid new experiences (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely seek new experiences (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes seek new experiences (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often seek new experiences (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always look for new challenges (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T03",
+            "text": "When faced with unexpected changes, how adaptable are you in modifying your plans?",
+            "domain": "Plasticity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I find it very difficult to adapt (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I struggle to adapt (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I can adapt with some effort (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I adapt fairly easily (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I adapt effortlessly (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T04",
+            "text": "In emotionally charged situations, how frequently do you remain calm and collected?",
+            "domain": "Emotional Reactivity",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "I am rarely calm (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I am occasionally calm (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I am sometimes calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I am usually calm (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I am always calm (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T05",
+            "text": "During group discussions, how often do you prefer to listen rather than speak?",
+            "domain": "Sociability",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "I always prefer to listen (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I usually prefer to listen (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes prefer to listen (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I rarely prefer to listen (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I never prefer to listen (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T06",
+            "text": "To what extent do you enjoy spontaneous activities over planned events?",
+            "domain": "Novelty Seeking",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I dislike spontaneity (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely enjoy spontaneity (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes enjoy spontaneity (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often enjoy spontaneity (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I love spontaneous activities (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T07",
+            "text": "How frequently do you adapt your behavior to suit different social contexts?",
+            "domain": "Plasticity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never adapt my behavior (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely adapt my behavior (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes adapt my behavior (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often adapt my behavior (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always adapt my behavior (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T08",
+            "text": "When under stress, how often do you experience intense emotional reactions?",
+            "domain": "Emotional Reactivity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never have intense reactions (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely have intense reactions (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes have intense reactions (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often have intense reactions (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always have intense reactions (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T09",
+            "text": "In new environments, how quickly do you feel comfortable engaging with others?",
+            "domain": "Sociability",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never feel comfortable quickly (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely feel comfortable quickly (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes feel comfortable quickly (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often feel comfortable quickly (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always feel comfortable quickly (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T10",
+            "text": "How often do you seek out activities that provide an adrenaline rush?",
+            "domain": "Novelty Seeking",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never seek adrenaline rushes (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely seek adrenaline rushes (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes seek adrenaline rushes (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often seek adrenaline rushes (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always seek adrenaline rushes (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T11",
+            "text": "When plans change unexpectedly, how easily do you adjust your mindset?",
+            "domain": "Plasticity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never adjust easily (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely adjust easily (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes adjust easily (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often adjust easily (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always adjust easily (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T12",
+            "text": "In moments of conflict, how frequently do you manage to stay composed?",
+            "domain": "Emotional Reactivity",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "I rarely stay composed (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I occasionally stay composed (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes stay composed (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I usually stay composed (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always stay composed (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T13",
+            "text": "How often do you find yourself comfortable in large social gatherings?",
+            "domain": "Sociability",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never feel comfortable (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely feel comfortable (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes feel comfortable (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often feel comfortable (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always feel comfortable (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T14",
+            "text": "How frequently do you try new foods or cuisines when given the opportunity?",
+            "domain": "Novelty Seeking",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never try new foods (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely try new foods (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes try new foods (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often try new foods (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always try new foods (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T15",
+            "text": "When encountering new people, how often do you adjust your communication style?",
+            "domain": "Plasticity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never adjust my style (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely adjust my style (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes adjust my style (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often adjust my style (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always adjust my style (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T16",
+            "text": "In tense situations, how often do you find yourself reacting impulsively?",
+            "domain": "Emotional Reactivity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never react impulsively (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely react impulsively (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes react impulsively (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often react impulsively (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always react impulsively (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T17",
+            "text": "How often do you engage in social activities outside your immediate circle of friends?",
+            "domain": "Sociability",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never engage outside my circle (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely engage outside my circle (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes engage outside my circle (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often engage outside my circle (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always engage outside my circle (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T18",
+            "text": "To what extent do you enjoy taking on tasks that have uncertain outcomes?",
+            "domain": "Novelty Seeking",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I dislike uncertain outcomes (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely enjoy uncertain outcomes (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes enjoy uncertain outcomes (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often enjoy uncertain outcomes (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I love uncertain outcomes (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T19",
+            "text": "How easily do you adapt your goals when faced with new information?",
+            "domain": "Plasticity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never adapt my goals (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely adapt my goals (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes adapt my goals (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often adapt my goals (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always adapt my goals (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "T20",
+            "text": "During arguments, how often do you find it challenging to maintain your composure?",
+            "domain": "Emotional Reactivity",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "I never find it challenging (0)",
+                    "value": 0
+                },
+                {
+                    "text": "I rarely find it challenging (1)",
+                    "value": 1
+                },
+                {
+                    "text": "I sometimes find it challenging (2)",
+                    "value": 2
+                },
+                {
+                    "text": "I often find it challenging (3)",
+                    "value": 3
+                },
+                {
+                    "text": "I always find it challenging (4)",
+                    "value": 4
+                }
+            ]
+        }
+    ],
+    "scoring": {
+        "dimension_cutoffs": {
+            "sociability": 7,
+            "plasticity": 5,
+            "novelty_seeking": 6,
+            "emotional_reactivity": 4
+        },
+        "interpretation": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "result": "Balanced Temperament",
+                "recommendation": "Your responses indicate a well-balanced temperament with adaptive behavioral traits."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "result": "High Emotional Reactivity",
+                "recommendation": "Your responses suggest elevated emotional sensitivity. Consider strategies for emotion regulation and further assessment if needed."
+            },
+            {
+                "range": [
+                    21,
+                    40
+                ],
+                "result": "Elevated Impulsivity",
+                "recommendation": "Your responses indicate a high degree of impulsivity. It may be beneficial to explore behavioral interventions and seek professional evaluation."
+            }
+        ]
+    }
+}

@@ -24,28 +24,59 @@ export interface Test {
   questions: number;
   duration: number;
   description?: string;
+  metadata?: TestMetadata;
+}
+
+export interface TestMetadata {
+  assessment_type: string;
+  version: string;
+  normative_data: string;
 }
 
 export interface Question {
   id: string;
-  question: string;
-  options: Option[];
+  text: string;
+  domain: string;
+  reverse_scored: boolean;
+  options: QuestionOption[];
 }
 
-export interface Option {
-  id: string;
+export interface QuestionOption {
   text: string;
+  value: number;
 }
 
 export interface TestResult {
-  overall: number; // 0 to 1
+  overall: number;
   breakdown: ResultBreakdown[];
+  interpretation?: string;
+  recommendation?: string;
 }
 
 export interface ResultBreakdown {
   name: string;
-  score: number; // 0 to 1
-  level: 'Low' | 'Moderate' | 'High';
+  score: number;
+  level: string;
+}
+
+export interface ScoringRules {
+  raw_score_ranges?: {
+    below_average: [number, number];
+    average: [number, number];
+    above_average: [number, number];
+    superior: [number, number];
+  };
+  symptom_cutoffs?: {
+    [key: string]: number;
+  };
+  dimension_cutoffs?: {
+    [key: string]: number;
+  };
+  interpretation: {
+    range: [number, number];
+    result: string;
+    recommendation: string;
+  }[];
 }
 
 export interface Book {
@@ -53,10 +84,10 @@ export interface Book {
   title: string;
   author: string;
   image: any; // Replace with proper type when assets are available
-  tags?: string[];
+  tags: string[];
   chapters: number;
   duration: number;
-  description?: string;
+  description: string;
 }
 
 export interface Chapter {

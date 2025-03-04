@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, Dimensions } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, Dimensions, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -7,8 +7,9 @@ import ProgressBar from '../../components/ProgressBar';
 import FeaturedCard from '../../components/FeaturedCard';
 import TestGridItem from '../../components/TestGridItem';
 
-// Import mock data
-import { TESTS } from '../../data/mockData';
+// Import data
+import { TESTS } from '../../data/quizData';
+import { getCompletedTestsCount } from '../../utils/storage';
 
 type TestsStackParamList = {
   TestsOverview: undefined;
@@ -20,6 +21,7 @@ type TestsScreenNavigationProp = StackNavigationProp<TestsStackParamList, 'Tests
 
 const TestsScreen = () => {
   const navigation = useNavigation<TestsScreenNavigationProp>();
+  const [completedTests, setCompletedTests] = useState(0);
   
   // Find the Emotional Intelligence test (id: '1')
   const featuredTest = TESTS.find(test => test.id === '1');
@@ -27,60 +29,77 @@ const TestsScreen = () => {
   // Get the other tests
   const gridTests = TESTS.filter(test => test.id !== '1');
 
+  // Load completed tests count
+  useEffect(() => {
+    const loadCompletedTests = async () => {
+      const count = await getCompletedTestsCount();
+      setCompletedTests(count);
+    };
+    
+    loadCompletedTests();
+  }, []);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {/* Progress Bar */}
-        <View style={styles.progressContainer}>
-          <Text style={styles.progressText}>Tests completed</Text>
-          <View style={styles.progressBarContainer}>
-            <Text style={styles.progressCount}>1/5</Text>
-            <ProgressBar 
-              progress={0.2} 
-              total={5} 
-              completed={1} 
-              showNumbers={false}
-              style={{ flex: 1 }}
-            />
+    <ImageBackground 
+      source={require('../../assets/images/background_quiz.png')}
+      style={styles.container}
+    >
+      <SafeAreaView style={styles.safeArea}>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          {/* Progress Bar */}
+          <View style={styles.progressContainer}>
+            <Text style={styles.progressText}>Tests completed</Text>
+            <View style={styles.progressBarContainer}>
+              <Text style={styles.progressCount}>{completedTests}/{TESTS.length}</Text>
+              <ProgressBar 
+                progress={TESTS.length > 0 ? completedTests / TESTS.length : 0} 
+                total={TESTS.length} 
+                completed={completedTests} 
+                showNumbers={false}
+                style={{ flex: 1 }}
+              />
+            </View>
           </View>
-        </View>
-        
-        {/* Featured Test Card */}
-        {featuredTest && (
-          <FeaturedCard
-            title={`Learn about your\nemotional intelligence`}
-            image={featuredTest.image}
-            questions={featuredTest.questions}
-            duration={featuredTest.duration}
-            onPress={() => navigation.navigate('TakeTest', { testId: featuredTest.id })}
-          />
-        )}
-        
-        {/* All Tests Section */}
-        <Text style={styles.sectionTitle}>All tests</Text>
-        
-        {/* Grid of Tests */}
-        <View style={styles.gridContainer}>
-          {gridTests.map(test => (
-            <TestGridItem
-              key={test.id}
-              title={test.title}
-              image={test.image}
-              questions={test.questions}
-              duration={test.duration}
-              onPress={() => navigation.navigate('TakeTest', { testId: test.id })}
+          
+          {/* Featured Test Card */}
+          {featuredTest && (
+            <FeaturedCard
+              title={`Learn about your\nemotional intelligence`}
+              image={featuredTest.image}
+              questions={featuredTest.questions}
+              duration={featuredTest.duration}
+              onPress={() => navigation.navigate('TakeTest', { testId: featuredTest.id })}
             />
-          ))}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+          )}
+          
+          {/* All Tests Section */}
+          <Text style={styles.sectionTitle}>All tests</Text>
+          
+          {/* Grid of Tests */}
+          <View style={styles.gridContainer}>
+            {gridTests.map(test => (
+              <TestGridItem
+                key={test.id}
+                title={test.title}
+                image={test.image}
+                questions={test.questions}
+                duration={test.duration}
+                onPress={() => navigation.navigate('TakeTest', { testId: test.id })}
+              />
+            ))}
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F8F8',
+  },
+  safeArea: {
+    flex: 1,
   },
   scrollContainer: {
     padding: 16,

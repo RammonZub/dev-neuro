@@ -24,7 +24,7 @@ const TestGridItem: React.FC<TestGridItemProps> = ({
       <View style={styles.content}>
         <Text style={styles.title} numberOfLines={2}>{title}</Text>
         <Text style={styles.info}>
-          {questions} Questions · {duration}-{duration + 10} min
+          {questions} Questions · {duration}-{duration + 5} min
         </Text>
       </View>
     </TouchableOpacity>
@@ -32,45 +32,41 @@ const TestGridItem: React.FC<TestGridItemProps> = ({
 };
 
 const { width } = Dimensions.get('window');
-// Adjust to make items smaller and fit more on screen
-const itemWidth = (width - 50) / 2; // 50 = padding (20) * 2 + gap between items (10)
+// Adjust to make items slightly bigger
+const itemWidth = (width - 40) / 2; // 40 = padding (16) * 2 + gap between items (8)
 
 const styles = StyleSheet.create({
   container: {
     width: itemWidth,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     borderRadius: 12,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-    marginBottom: 12, // Reduced margin
+    marginBottom: 16, // Increased margin
   },
   imageContainer: {
     width: '100%',
-    height: itemWidth * 0.8, // Reduced height ratio
+    height: itemWidth * 0.8, // Increased height ratio
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
     overflow: 'hidden',
   },
   image: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    width: '95%', // Increased width
+    height: '95%', // Increased height
+    resizeMode: 'contain',
+    alignSelf: 'center',
   },
   content: {
-    padding: 8, // Reduced padding
+    padding: 10, // Increased padding
   },
   title: {
-    fontSize: 14, // Smaller font
+    fontSize: 14, // Increased font size
     fontWeight: '600',
-    marginBottom: 2, // Reduced margin
+    marginBottom: 4, // Increased margin
     color: '#333',
   },
   info: {
-    fontSize: 10, // Smaller font
+    fontSize: 10, // Increased font size
     color: '#8E8E93',
   },
 });

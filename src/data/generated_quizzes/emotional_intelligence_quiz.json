@@ -1,0 +1,600 @@
+{
+    "metadata": {
+        "assessment_type": "Adult Emotional Intelligence Screener",
+        "version": "1.0",
+        "normative_data": "Based on current evidence from validated EI assessments and large-scale studies"
+    },
+    "items": [
+        {
+            "id": "EI01",
+            "text": "When faced with a challenging situation, how often do you accurately identify your own emotions?",
+            "domain": "Emotion Perception",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI02",
+            "text": "How frequently do you find it easy to adapt your emotional responses to suit different environments?",
+            "domain": "Emotion Utilization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI03",
+            "text": "In situations where others are emotionally distressed, how often do you accurately gauge their feelings?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI04",
+            "text": "How often do you find yourself able to control your emotions in high-pressure situations?",
+            "domain": "Emotion Regulation",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI05",
+            "text": "When working in a team, how often do you sense the mood and adjust your communication style accordingly?",
+            "domain": "Emotion Utilization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI06",
+            "text": "How often do you reflect on your emotions after a significant event to gain insight?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI07",
+            "text": "In daily interactions, how frequently do you find it difficult to express your emotions clearly?",
+            "domain": "Emotion Regulation",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "EI08",
+            "text": "When someone close to you shares their problems, how often do you find it easy to empathize with them?",
+            "domain": "Emotion Perception",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI09",
+            "text": "In a conflict, how often do you recognize the emotions at play for both yourself and others?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI10",
+            "text": "How often do you find yourself reacting impulsively without thinking about the consequences of your emotions?",
+            "domain": "Emotion Regulation",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "EI11",
+            "text": "In social gatherings, how often do you sense the mood of the room and adjust your behavior accordingly?",
+            "domain": "Emotion Perception",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI12",
+            "text": "When faced with criticism, how often do you manage to keep your emotions in check and respond constructively?",
+            "domain": "Emotion Regulation",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI13",
+            "text": "How often do you find yourself able to inspire and motivate others through your emotional expressions?",
+            "domain": "Emotion Utilization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI14",
+            "text": "When making important decisions, how frequently do you consider your emotional state?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI15",
+            "text": "In conversations, how often do you find yourself aware of non-verbal emotional cues?",
+            "domain": "Emotion Perception",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI16",
+            "text": "How often do you find it challenging to understand why you feel a certain way?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "EI17",
+            "text": "When you notice someone is upset, how often do you change your approach to better connect with them?",
+            "domain": "Emotion Utilization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI18",
+            "text": "In situations where you must remain composed, how often can you manage your emotions effectively?",
+            "domain": "Emotion Regulation",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "id": "EI19",
+            "text": "How frequently do you find yourself misunderstanding others' emotional expressions?",
+            "domain": "Emotion Perception",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "EI20",
+            "text": "How often do you consider others' emotional states when planning your actions?",
+            "domain": "Emotion Understanding",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Never experienced this in real-life situations (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Rarely experienced this in everyday contexts (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Sometimes encountered under stress or calm (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Often noticed in both personal and professional settings (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Nearly always apparent regardless of circumstances (4)",
+                    "value": 4
+                }
+            ]
+        }
+    ],
+    "scoring": {
+        "symptom_cutoffs": {
+            "emotion_competency": 12
+        },
+        "interpretation": [
+            {
+                "range": [
+                    0,
+                    20
+                ],
+                "result": "Low Emotional Intelligence",
+                "recommendation": "Your responses indicate challenges in emotional awareness and regulation. Consider interventions focused on emotional skills training."
+            },
+            {
+                "range": [
+                    21,
+                    35
+                ],
+                "result": "Moderate Emotional Intelligence",
+                "recommendation": "Your emotional skills are average. Enhancing your emotional awareness and communication may further improve your relationships."
+            },
+            {
+                "range": [
+                    36,
+                    60
+                ],
+                "result": "High Emotional Intelligence",
+                "recommendation": "Your responses suggest strong emotional competencies. Continue to develop these skills and consider leadership roles that leverage your emotional insight."
+            }
+        ]
+    }
+}

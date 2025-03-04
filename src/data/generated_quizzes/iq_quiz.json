@@ -1,0 +1,1027 @@
+{
+    "metadata": {
+        "assessment_type": "IQ Test",
+        "version": "1.0",
+        "normative_data": "Based on standardized cognitive assessment research and established IQ test benchmarks"
+    },
+    "items": [
+        {
+            "id": "IQ01",
+            "text": "If all bloops are razzies and all razzies are lazzies, can we conclude that all bloops are definitely lazzies?",
+            "domain": "Logical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Yes, all bloops are lazzies (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: No, not all bloops are lazzies (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: It depends on additional information (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Only some bloops are lazzies (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option E: None of the bloops are lazzies (3)",
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "id": "IQ02",
+            "text": "In a sequence of numbers: 2, 6, 12, 20, what number comes next?",
+            "domain": "Numerical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 30, as the pattern increases by consecutive even numbers (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 28, continuing by adding 6 each time (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option C: 32, following the pattern of adding multiples of 4 (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Option D: 24, due to a doubling pattern (1)",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "id": "IQ03",
+            "text": "Which word does not belong in the following set: dog, cat, lion, apple?",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Dog, because it's a domestic animal (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option B: Apple, as it is not an animal (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option C: Lion, due to its wild nature (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: Cat, since it is a smaller animal (3)",
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "id": "IQ04",
+            "text": "Imagine a cube painted on all sides. If it is cut into smaller cubes, how many of these smaller cubes will have at least one side painted?",
+            "domain": "Spatial Visualization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: All smaller cubes will have a painted side (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option B: Only the cubes on the edges will have painted sides (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Option C: Cubes on the outer surface will have at least one painted side (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option D: None will have a painted side (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ05",
+            "text": "Complete the analogy: Book is to Reading as Fork is to?",
+            "domain": "Analogical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Eating, because a fork is used for eating (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Writing, since both involve utensils (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: Cooking, as both are involved in meal preparation (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: Cleaning, because utensils require cleaning (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ06",
+            "text": "A train leaves a station and travels north at 60 mph. Another train leaves the same station at the same time traveling south at 45 mph. How far apart will the trains be after 2 hours?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 210 miles, by adding both speeds times 2 hours (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 150 miles, only calculating one train's distance (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 180 miles, considering only the faster train (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 240 miles, doubling the speed of the slower train (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ07",
+            "text": "Which of the following sequences continues: 1, 4, 9, 16, ...?",
+            "domain": "Pattern Recognition",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 25, as these are square numbers (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 20, following an addition by consecutive odd numbers (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Option C: 30, because the pattern multiplies by 3 (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 24, as it doubles each time (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ08",
+            "text": "If yesterday was tomorrow, then what would today be if the day after tomorrow is Saturday?",
+            "domain": "Logical Reasoning",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Option A: Friday, deducing the sequence of days (3)",
+                    "value": 3
+                },
+                {
+                    "text": "Option B: Wednesday, considering today as the day before Thursday (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option C: Thursday, assuming the previous day was Friday (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: Sunday, if today is before Monday (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ09",
+            "text": "A clock shows 3 o'clock. What is the angle between the hour and the minute hand?",
+            "domain": "Spatial Visualization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 90 degrees, as the hands form a right angle (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 75 degrees, due to the position of the minute hand (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 180 degrees, considering the opposite position of hands (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: 60 degrees, by calculating increments (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ10",
+            "text": "Which letter comes next in the following pattern: A, C, F, J, ...?",
+            "domain": "Sequence Identification",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: M, following an incremental sequence of +1, +2, +3, ... (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: N, due to a pattern of doubling (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: O, by following the alphabet in reverse (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: L, by adding 4 each time (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ11",
+            "text": "If a triangle has two equal angles of 45 degrees, what is the measure of the third angle?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 90 degrees, since the sum of triangle angles is 180 degrees (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 60 degrees, assuming it's an equilateral triangle (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 45 degrees, considering equal angles (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 75 degrees, due to an incorrect assumption (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ12",
+            "text": "Which word is most closely related to the concept of 'auditory'?",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Hearing, as it pertains to sound perception (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Vision, as it involves sensory perception (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Speaking, related to communication (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: Touching, involving sensory experience (1)",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "id": "IQ13",
+            "text": "What is the next number in the following series: 5, 10, 20, 40, ...?",
+            "domain": "Numerical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 80, by doubling the previous number (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 70, by adding 30 to the last number (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 60, by following an addition pattern (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 100, by increasing exponentially (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ14",
+            "text": "Find the odd one out: Circle, Square, Triangle, Rectangle.",
+            "domain": "Pattern Recognition",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Circle, as it has no sides (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Square, because it has equal sides (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: Triangle, due to having fewer sides (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: Rectangle, as it has different side lengths (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ15",
+            "text": "If you rearrange the letters 'CIFAIPC', you obtain the name of a(n):",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Ocean, as the letters form 'PACIFIC' (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Animal, because it spells a creature's name (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: City, due to its urban reference (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Country, as it spells a national name (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ16",
+            "text": "If the code for DOG is 4157, then what is the code for CAT?",
+            "domain": "Pattern Recognition",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 3120, by assigning each letter a unique number (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 3249, assuming a sequential number pattern (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 4296, using a reverse coding method (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option D: 2147, following an unrelated sequence (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ17",
+            "text": "Which of the following completes the sequence: Red, Blue, Green, _____?",
+            "domain": "Sequence Identification",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Yellow, as it is the next primary color (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Orange, due to its position in the spectrum (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option C: Purple, by following a blending pattern (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Violet, assuming an alphabetical order (0)",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "id": "IQ18",
+            "text": "A man walks 10 miles north, turns right, and walks 10 miles east. How far is he from his starting point?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 14.14 miles, using the Pythagorean theorem (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 20 miles, as he walked that total distance (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 10 miles, considering only one direction (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 15 miles, assuming a linear path (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ19",
+            "text": "Which of the following words is an antonym of 'benevolent'?",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Malevolent, as it means having ill will (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Kind, due to its similar meaning (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Generous, which is a synonym (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Empathetic, which is related but not opposite (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ20",
+            "text": "Which number comes next in the series: 1, 4, 9, 16, 25, _____?",
+            "domain": "Numerical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 36, as these are square numbers (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 30, by adding consecutive odd numbers (2)",
+                    "value": 2
+                },
+                {
+                    "text": "Option C: 40, assuming a doubling pattern (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 34, by following a mistaken sequence (1)",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "id": "IQ21",
+            "text": "If you have a bag with 50 red balls and 50 blue balls, what is the probability of picking out a red ball?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 50%, due to equal distribution (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 25%, considering a reduced sample (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 75%, assuming a skewed distribution (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 60%, based on incorrect assumptions (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ22",
+            "text": "Which of these shapes cannot be formed by folding a square piece of paper?",
+            "domain": "Spatial Visualization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: A cone, as it requires a circular base (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: A rectangle, achievable with folds (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: A triangle, possible through diagonal folds (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: A smaller square, formed by equal folds (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ23",
+            "text": "What comes next in this pattern: 2, 3, 5, 8, 12, ...?",
+            "domain": "Sequence Identification",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 17, adding consecutive numbers each time (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 16, by doubling the last number (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 14, using a pattern of subtraction (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 15, by maintaining a different pattern (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ24",
+            "text": "In a race, John is twice as fast as Jeff. If John finishes in 10 minutes, how long does Jeff take?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 20 minutes, as Jeff is half as fast (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 15 minutes, assuming a smaller difference (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 10 minutes, if they both maintain pace (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 25 minutes, considering a miscalculation (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ25",
+            "text": "Which word is synonymous with 'ostentatious'?",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Showy, as it implies a display of wealth (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Humble, which is the opposite (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Simple, as it suggests minimalism (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Plain, indicating lack of decoration (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ26",
+            "text": "What number completes the series: 3, 6, 12, 24, 48, ...?",
+            "domain": "Numerical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 96, by doubling each previous number (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 72, following a sequence of additions (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 102, using a different growth factor (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 84, assuming an incorrect pattern (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ27",
+            "text": "If you rearrange the letters 'RAPET', you obtain the name of a(n):",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Fruit, as it spells 'PEAR' (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Animal, due to a misinterpretation (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: City, assuming a geographical name (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Country, following an unrelated assumption (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ28",
+            "text": "A rectangle has a length of 10 and a width of 5. What is the area?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 50, by multiplying length and width (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 15, by adding dimensions (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 40, assuming incorrect multiplication (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 25, using a different formula (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ29",
+            "text": "Which of the following shapes is three-dimensional?",
+            "domain": "Spatial Visualization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Sphere, as it has volume (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Circle, which is flat (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Square, having no depth (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Triangle, a planar figure (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ30",
+            "text": "Which of the following sequences continues: 1, 1, 2, 3, 5, 8, ...?",
+            "domain": "Pattern Recognition",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 13, following the Fibonacci sequence (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 10, by adding a constant number (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 15, based on a mistaken pattern (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 11, assuming an unrelated sequence (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ31",
+            "text": "What is the result of the following operation: (3 + 5) x 2?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 16, by following order of operations (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 13, assuming incorrect addition (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 14, through an error in multiplication (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 18, due to miscalculation (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ32",
+            "text": "If a week has 7 days, how many weeks are there in 42 days?",
+            "domain": "Numerical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 6 weeks, by dividing total days by 7 (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 5 weeks, due to a counting error (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 8 weeks, assuming an incorrect calculation (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 7 weeks, from a miscounted sequence (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ33",
+            "text": "Which of the following is an example of a palindrome?",
+            "domain": "Verbal Comprehension",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 'Racecar', as it reads the same backward (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 'Garden', due to incorrect assumption (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 'Computer', which does not reverse (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 'Science', following a mistaken pattern (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ34",
+            "text": "What completes the pattern: 1, 2, 4, 7, 11, ...?",
+            "domain": "Sequence Identification",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 16, by adding consecutive numbers (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 14, using a different addition pattern (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 18, assuming an incorrect sequence (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 15, due to a miscalculation (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ35",
+            "text": "If all poodles are dogs and some dogs are not poodles, can we conclude that some poodles are not dogs?",
+            "domain": "Logical Reasoning",
+            "reverse_scored": true,
+            "options": [
+                {
+                    "text": "Option A: No, all poodles are dogs (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Yes, some poodles are not dogs (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: It depends on additional information (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Only some poodles are dogs (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ36",
+            "text": "A farmer has 17 cows, all but 8 die. How many are left?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 8, as those are the surviving cows (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 9, assuming a misinterpretation (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option C: 17, as none actually died (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option D: 7, due to incorrect subtraction (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ37",
+            "text": "Which letter comes next in the series: Z, X, V, T, ...?",
+            "domain": "Pattern Recognition",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: R, following a pattern of subtracting two alphabet positions (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: S, due to a mistaken sequence (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Q, based on an incorrect assumption (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: P, assuming a doubling pattern (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ38",
+            "text": "What is the result of the operation: 9 - (4 + 2)?",
+            "domain": "Problem Solving",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: 3, by applying order of operations (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: 5, due to incorrect subtraction (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: 6, following a miscalculation (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: 4, assuming a different operation (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ39",
+            "text": "Which of the following is a characteristic of a cube?",
+            "domain": "Spatial Visualization",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Each face is a square, providing equal dimensions (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: It has circular faces, which is incorrect (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: It is flat, which is a wrong assumption (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: It has triangular surfaces, which is not true (2)",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "IQ40",
+            "text": "Complete the analogy: Finger is to Hand as Leaf is to?",
+            "domain": "Analogical Reasoning",
+            "reverse_scored": false,
+            "options": [
+                {
+                    "text": "Option A: Tree, as a leaf is part of a tree (4)",
+                    "value": 4
+                },
+                {
+                    "text": "Option B: Forest, which is a broader category (0)",
+                    "value": 0
+                },
+                {
+                    "text": "Option C: Branch, which is a misconception (1)",
+                    "value": 1
+                },
+                {
+                    "text": "Option D: Ground, assuming an unrelated analogy (2)",
+                    "value": 2
+                }
+            ]
+        }
+    ],
+    "scoring": {
+        "raw_score_ranges": {
+            "below_average": [
+                0,
+                20
+            ],
+            "average": [
+                21,
+                30
+            ],
+            "above_average": [
+                31,
+                35
+            ],
+            "superior": [
+                36,
+                40
+            ]
+        },
+        "interpretation": [
+            {
+                "range": [
+                    0,
+                    20
+                ],
+                "result": "Below Average IQ",
+                "recommendation": "Your responses suggest below-average cognitive performance; further evaluation may be beneficial."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "result": "Average IQ",
+                "recommendation": "Your responses indicate average cognitive abilities; additional testing may provide further insights."
+            },
+            {
+                "range": [
+                    31,
+                    35
+                ],
+                "result": "Above Average IQ",
+                "recommendation": "Your responses suggest above-average cognitive performance; you may excel in challenging intellectual environments."
+            },
+            {
+                "range": [
+                    36,
+                    40
+                ],
+                "result": "Superior IQ",
+                "recommendation": "Your responses indicate superior cognitive abilities; further assessments could identify specific strengths for advanced learning."
+            }
+        ]
+    }
+}

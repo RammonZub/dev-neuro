@@ -116,6 +116,6 @@ def process_data(input_file: str, output_file: str):
 if __name__ == "__main__":
     # Process the temporary file and create a new cleaned file
     process_data(
-        input_file="temp_goodreads_books_parallel.json",
+        input_file="goodreads_books_collection.json",
         output_file="cleaned_goodreads_books.json"
     ) 
