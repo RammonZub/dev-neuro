@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # Initialize OpenAI client with hardcoded API key
-API_KEY = "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"  # Replace with your valid API key
+API_KEY = "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"  # Revoked API key
 print(f"Using API Key: {API_KEY[:8]}...{API_KEY[-4:]}")  # Print partial key for security
 client = openai.OpenAI(api_key=API_KEY)
 

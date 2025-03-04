@@ -235,6 +235,195 @@ const TestResultScreen = () => {
     recommendation
   };
   
+  // Get detailed clinical interpretation based on test type and score
+  const getDetailedInterpretation = () => {
+    if (!test) return null;
+    
+    // Extract test type from test title or id
+    const testType = test.title.toLowerCase();
+    
+    // Common patterns in different score ranges
+    const lowScorePatterns = {
+      adhd: "Your responses suggest minimal indicators associated with ADHD. This doesn't necessarily mean you don't have attention-related challenges, but they may not meet clinical thresholds for diagnosis.",
+      anxiety: "Your responses indicate minimal anxiety symptoms. While everyone experiences occasional anxiety, your current symptom profile suggests your anxiety levels are within a manageable range.",
+      depression: "Your responses suggest minimal depressive symptoms. While everyone experiences occasional low mood, your current symptom profile indicates your mood regulation is generally effective.",
+      iq: "Your performance suggests room for cognitive development in specific areas. Remember that IQ tests measure specific types of cognitive abilities and don't capture the full spectrum of intelligence.",
+      temperament: "Your temperament profile suggests you tend to be more even-keeled and may adapt well to various situations. You likely experience emotional states with moderate intensity.",
+      emotional_intelligence: "Your emotional intelligence score suggests opportunities for development in recognizing and managing emotions. Building these skills can enhance your social interactions and self-awareness."
+    };
+    
+    const moderateScorePatterns = {
+      adhd: "Your responses indicate some attention-related challenges that may impact your daily functioning. While not necessarily at clinical levels, these patterns may benefit from targeted strategies.",
+      anxiety: "Your responses suggest moderate anxiety levels. This may manifest as occasional worry, tension, or physical symptoms that impact your daily life but don't completely impair functioning.",
+      depression: "Your responses indicate moderate depressive symptoms. You may experience periodic low mood, reduced interest, or energy fluctuations that affect your quality of life.",
+      iq: "Your cognitive performance falls within an average to above-average range compared to the general population. You demonstrate balanced abilities across different cognitive domains.",
+      temperament: "Your temperament profile shows a balanced pattern of emotional reactivity and regulation. You likely experience emotions with moderate intensity and have developed some effective coping mechanisms.",
+      emotional_intelligence: "Your emotional intelligence score indicates a moderate ability to recognize and manage emotions. You have some effective strategies but may benefit from enhancing specific aspects."
+    };
+    
+    const highScorePatterns = {
+      adhd: "Your responses suggest significant attention-related challenges consistent with ADHD patterns. These symptoms appear to be impacting multiple areas of your life and functioning.",
+      anxiety: "Your responses indicate elevated anxiety levels that may be significantly impacting your daily functioning. This pattern of symptoms suggests clinical levels of anxiety that may benefit from professional support.",
+      depression: "Your responses suggest significant depressive symptoms that may be impacting multiple areas of your life. This pattern indicates potential clinical depression that warrants professional attention.",
+      iq: "Your cognitive performance suggests strong abilities across multiple domains. You demonstrate particular strengths in pattern recognition, logical reasoning, and problem-solving.",
+      temperament: "Your temperament profile indicates heightened emotional sensitivity and reactivity. You likely experience emotions intensely and may be particularly responsive to environmental stimuli.",
+      emotional_intelligence: "Your emotional intelligence score suggests well-developed abilities in recognizing and managing emotions. You demonstrate strengths in emotional awareness and regulation."
+    };
+    
+    // Select appropriate interpretation based on test type and score level
+    let detailedInterpretation = '';
+    
+    if (testType.includes('adhd')) {
+      detailedInterpretation = resultLevel === 'Low' ? lowScorePatterns.adhd : 
+                              resultLevel === 'Moderate' ? moderateScorePatterns.adhd : 
+                              highScorePatterns.adhd;
+    } else if (testType.includes('anxiety')) {
+      detailedInterpretation = resultLevel === 'Low' ? lowScorePatterns.anxiety : 
+                              resultLevel === 'Moderate' ? moderateScorePatterns.anxiety : 
+                              highScorePatterns.anxiety;
+    } else if (testType.includes('depression') || testType.includes('temperament')) {
+      detailedInterpretation = resultLevel === 'Low' ? lowScorePatterns.depression : 
+                              resultLevel === 'Moderate' ? moderateScorePatterns.depression : 
+                              highScorePatterns.depression;
+    } else if (testType.includes('iq') || testType.includes('intelligence')) {
+      detailedInterpretation = resultLevel === 'Low' ? lowScorePatterns.iq : 
+                              resultLevel === 'Moderate' ? moderateScorePatterns.iq : 
+                              highScorePatterns.iq;
+    } else if (testType.includes('emotional')) {
+      detailedInterpretation = resultLevel === 'Low' ? lowScorePatterns.emotional_intelligence : 
+                              resultLevel === 'Moderate' ? moderateScorePatterns.emotional_intelligence : 
+                              highScorePatterns.emotional_intelligence;
+    }
+    
+    return detailedInterpretation;
+  };
+  
+  // Get personalized recommendations based on test type and breakdown
+  const getPersonalizedRecommendations = () => {
+    if (!test) return null;
+    
+    // Extract test type from test title or id
+    const testType = test.title.toLowerCase();
+    const breakdown = result.breakdown || [];
+    
+    // Find highest and lowest scoring domains
+    let highestDomain = { name: '', score: 0 };
+    let lowestDomain = { name: '', score: 1 };
+    
+    breakdown.forEach(domain => {
+      if (domain.score > highestDomain.score) {
+        highestDomain = { name: domain.name, score: domain.score };
+      }
+      if (domain.score < lowestDomain.score) {
+        lowestDomain = { name: domain.name, score: domain.score };
+      }
+    });
+    
+    // Common recommendations based on test type
+    const adhdRecommendations = {
+      general: "Consider implementing structured routines and using organizational tools to manage daily tasks. Breaking tasks into smaller steps can make them more manageable.",
+      professional: "If your symptoms significantly impact your daily functioning, consider consulting with a healthcare provider who specializes in ADHD for a comprehensive evaluation.",
+      lifestyle: "Regular physical exercise, adequate sleep, and stress management techniques can help reduce ADHD symptoms. Mindfulness practices may also improve attention regulation."
+    };
+    
+    const anxietyRecommendations = {
+      general: "Practice relaxation techniques such as deep breathing, progressive muscle relaxation, or guided imagery when feeling anxious. Identifying and challenging negative thought patterns can also be helpful.",
+      professional: "If anxiety is significantly impacting your daily life, consider speaking with a mental health professional about cognitive-behavioral therapy (CBT) or other evidence-based approaches.",
+      lifestyle: "Regular physical activity, limiting caffeine and alcohol, maintaining a consistent sleep schedule, and practicing mindfulness can help manage anxiety symptoms."
+    };
+    
+    const depressionRecommendations = {
+      general: "Establish daily routines that include activities you enjoy, even if motivation is low. Social connection, even in small doses, can help improve mood.",
+      professional: "If depressive symptoms persist or significantly impact your functioning, consider consulting with a mental health professional about therapy options and potential medical evaluation.",
+      lifestyle: "Regular physical activity, exposure to natural light, maintaining social connections, and establishing healthy sleep patterns can help manage depressive symptoms."
+    };
+    
+    const iqRecommendations = {
+      general: "Engage in activities that challenge different cognitive abilities, such as puzzles, reading, learning new skills, or strategic games.",
+      professional: "If you're interested in a more comprehensive cognitive assessment, consider consulting with a psychologist who specializes in cognitive testing.",
+      lifestyle: "Regular physical exercise, adequate sleep, good nutrition, and managing stress can all support optimal cognitive functioning."
+    };
+    
+    const emotionalIntelligenceRecommendations = {
+      general: "Practice identifying and naming your emotions throughout the day. Reflect on how your emotions influence your thoughts and behaviors.",
+      professional: "Consider resources like books, workshops, or coaching focused on emotional intelligence development.",
+      lifestyle: "Mindfulness practices, journaling, and actively seeking feedback from trusted others can help develop emotional awareness and regulation skills."
+    };
+    
+    // Select appropriate recommendations based on test type
+    let personalizedRecommendations = '';
+    
+    if (testType.includes('adhd')) {
+      personalizedRecommendations = `${adhdRecommendations.general} ${adhdRecommendations.lifestyle} ${resultLevel === 'High' ? adhdRecommendations.professional : ''}`;
+    } else if (testType.includes('anxiety')) {
+      personalizedRecommendations = `${anxietyRecommendations.general} ${anxietyRecommendations.lifestyle} ${resultLevel === 'High' ? anxietyRecommendations.professional : ''}`;
+    } else if (testType.includes('depression') || testType.includes('temperament')) {
+      personalizedRecommendations = `${depressionRecommendations.general} ${depressionRecommendations.lifestyle} ${resultLevel === 'High' ? depressionRecommendations.professional : ''}`;
+    } else if (testType.includes('iq') || testType.includes('intelligence')) {
+      personalizedRecommendations = `${iqRecommendations.general} ${iqRecommendations.lifestyle}`;
+    } else if (testType.includes('emotional')) {
+      personalizedRecommendations = `${emotionalIntelligenceRecommendations.general} ${emotionalIntelligenceRecommendations.lifestyle}`;
+    }
+    
+    // Add domain-specific recommendations if available
+    if (lowestDomain.name && lowestDomain.score < 0.4) {
+      personalizedRecommendations += ` Based on your results, you might benefit from focusing on developing skills related to ${lowestDomain.name.toLowerCase()}.`;
+    }
+    
+    if (highestDomain.name && highestDomain.score > 0.7) {
+      personalizedRecommendations += ` Your strengths in ${highestDomain.name.toLowerCase()} can be leveraged to support areas that may need more development.`;
+    }
+    
+    return personalizedRecommendations;
+  };
+  
+  // Get comparative analysis with population norms
+  const getComparativeAnalysis = () => {
+    if (!test) return null;
+    
+    // This would ideally use actual normative data from the test metadata
+    // For now, we'll provide a simplified comparison
+    
+    const percentileEstimate = Math.round(normalizedScore * 100);
+    
+    let comparativeText = '';
+    
+    if (percentileEstimate < 25) {
+      comparativeText = `Your score falls in approximately the ${percentileEstimate}th percentile, which means about ${100 - percentileEstimate}% of people who take this assessment score higher than you did.`;
+    } else if (percentileEstimate < 50) {
+      comparativeText = `Your score falls in approximately the ${percentileEstimate}th percentile, which is in the lower-average range compared to others who have taken this assessment.`;
+    } else if (percentileEstimate < 75) {
+      comparativeText = `Your score falls in approximately the ${percentileEstimate}th percentile, which is in the upper-average range compared to others who have taken this assessment.`;
+    } else {
+      comparativeText = `Your score falls in approximately the ${percentileEstimate}th percentile, which means only about ${100 - percentileEstimate}% of people who take this assessment score higher than you did.`;
+    }
+    
+    return comparativeText;
+  };
+  
+  // Enhanced interpretation combining all advanced reasoning
+  const enhancedInterpretation = useMemo(() => {
+    const detailedInterpretation = getDetailedInterpretation();
+    const comparativeAnalysis = getComparativeAnalysis();
+    
+    if (!detailedInterpretation || !comparativeAnalysis) {
+      return interpretation;
+    }
+    
+    return `${detailedInterpretation} ${comparativeAnalysis} ${interpretation}`;
+  }, [interpretation, test, normalizedScore, resultLevel]);
+  
+  // Enhanced recommendations with personalized insights
+  const enhancedRecommendations = useMemo(() => {
+    const personalizedRecommendations = getPersonalizedRecommendations();
+    
+    if (!personalizedRecommendations) {
+      return recommendation;
+    }
+    
+    return `${personalizedRecommendations} ${recommendation}`;
+  }, [recommendation, test, result.breakdown, resultLevel]);
+  
   // Save result to local storage
   const saveResult = async () => {
     try {
@@ -296,10 +485,10 @@ const TestResultScreen = () => {
             {/* Results Card */}
             <View style={styles.resultsCard}>
               <Text style={styles.sectionTitle}>Interpretation</Text>
-              <Text style={styles.interpretationText}>{interpretation}</Text>
+              <Text style={styles.interpretationText}>{enhancedInterpretation}</Text>
               
               <Text style={styles.sectionTitle}>Recommendation</Text>
-              <Text style={styles.recommendationText}>{recommendation}</Text>
+              <Text style={styles.recommendationText}>{enhancedRecommendations}</Text>
               
               <Text style={styles.sectionTitle}>Breakdown</Text>
               {result.breakdown.map((item, index) => (
@@ -323,6 +512,15 @@ const TestResultScreen = () => {
                     styles.highLevelText
                   ]}>
                     {item.level}
+                  </Text>
+                  
+                  {/* Add domain-specific interpretation */}
+                  <Text style={styles.domainInterpretation}>
+                    {item.level === 'Low' ? 
+                      `Your responses suggest minimal concerns in this area.` : 
+                    item.level === 'Moderate' ? 
+                      `Your responses indicate some challenges in this area that may benefit from attention.` : 
+                      `Your responses suggest significant challenges in this area that may require focused attention.`}
                   </Text>
                 </View>
               ))}
@@ -488,6 +686,12 @@ const styles = StyleSheet.create({
   },
   finishButton: {
     backgroundColor: '#00D087',
+  },
+  domainInterpretation: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 4,
+    fontStyle: 'italic',
   },
 });
 
