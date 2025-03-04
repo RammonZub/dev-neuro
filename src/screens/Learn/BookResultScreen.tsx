@@ -22,12 +22,6 @@ const logoSvg = `<svg width="116" height="20" viewBox="0 0 116 20" fill="none" x
 </g>
 </svg>`;
 
-// Process books data
-const allBooks = booksData.map((book, index) => ({
-  id: (index + 1).toString(),
-  ...book
-}));
-
 // Shelf SVG
 const shelfSvg = `<svg width="134" height="20" viewBox="0 0 134 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.371094 11.1781H133.371V17.321C133.371 18.4255 132.476 19.321 131.371 19.321H2.37109C1.26652 19.321 0.371094 18.4255 0.371094 17.321V11.1781Z" fill="white"/>
@@ -48,8 +42,8 @@ const BookResultScreen = () => {
   const route = useRoute<BookResultScreenRouteProp>();
   const { bookId } = route.params;
   
-  // Find the book
-  const book = allBooks.find(b => b.id === bookId);
+  // Find the book - FIXED: Use the index directly instead of looking for an ID property
+  const book = booksData[parseInt(bookId)];
   
   // Reading stats (simulated)
   const keyPoints = 13;
@@ -66,9 +60,21 @@ const BookResultScreen = () => {
   
   if (!book) {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text>Book not found</Text>
-      </SafeAreaView>
+      <ImageBackground 
+        source={require('../../assets/images/background_quiz.png')}
+        style={styles.container}
+        resizeMode="cover"
+      >
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorTitle}>Error</Text>
+            <Text style={styles.errorMessage}>Book not found (ID: {bookId})</Text>
+            <TouchableOpacity style={styles.homeButton} onPress={handleBack}>
+              <Text style={styles.homeButtonText}>Return Home</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
     );
   }
 
@@ -76,6 +82,7 @@ const BookResultScreen = () => {
     <ImageBackground 
       source={require('../../assets/images/background_quiz.png')}
       style={styles.container}
+      resizeMode="cover"
     >
       <SafeAreaView style={styles.safeArea}>
         {/* Header with Logo */}
@@ -152,11 +159,14 @@ const BookResultScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    height: '100%',
   },
   safeArea: {
     flex: 1,
-    paddingHorizontal: 45,
+    paddingHorizontal: 24,
     paddingTop: 8,
+    backgroundColor: 'transparent',
   },
   header: {
     alignItems: 'center',
@@ -164,7 +174,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   resultCard: {
-    backgroundColor: 'rgba(252, 249, 241, 0.95)',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',
@@ -174,7 +184,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
     marginBottom: 16,
-    marginHorizontal: 24,
+    marginHorizontal: 20,
   },
   bookCoverContainer: {
     alignItems: 'center',
@@ -245,7 +255,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
     marginBottom: 16,
-    marginHorizontal: 24,
+    marginHorizontal: 20,
   },
   ratingTitle: {
     fontSize: 12,
@@ -265,14 +275,15 @@ const styles = StyleSheet.create({
   actionsContainer: {
     marginTop: 'auto',
     paddingBottom: 24,
+    marginHorizontal: 20,
   },
   shareButton: {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: 'center',
-    marginBottom: 8,
-    marginHorizontal: 24,
+    marginBottom: 12,
+    width: '100%',
   },
   shareButtonText: {
     color: '#333',
@@ -284,12 +295,33 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: 'center',
-    marginHorizontal: 24,
+    width: '100%',
   },
   homeButtonText: {
     color: 'white',
     fontWeight: '600',
     fontSize: 15,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    margin: 16,
+    borderRadius: 16,
+  },
+  errorTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#FF3B30',
+    marginBottom: 16,
+  },
+  errorMessage: {
+    fontSize: 16,
+    color: '#333',
+    textAlign: 'center',
+    marginBottom: 24,
   },
 });
 

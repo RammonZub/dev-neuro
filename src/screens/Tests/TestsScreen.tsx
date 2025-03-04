@@ -43,6 +43,7 @@ const TestsScreen = () => {
     <ImageBackground 
       source={require('../../assets/images/background_quiz.png')}
       style={styles.container}
+      resizeMode="cover"
     >
       <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -97,9 +98,12 @@ const TestsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    height: '100%',
   },
   safeArea: {
     flex: 1,
+    backgroundColor: 'transparent',
   },
   scrollContainer: {
     padding: 16,
@@ -107,6 +111,9 @@ const styles = StyleSheet.create({
   },
   progressContainer: {
     marginBottom: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    padding: 12,
+    borderRadius: 12,
   },
   progressText: {
     fontSize: 14,

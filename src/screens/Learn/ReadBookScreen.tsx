@@ -76,27 +76,39 @@ const ReadBookScreen = () => {
   // If there's an error, show error screen
   if (error) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.errorContainer}>
-          <Text style={styles.errorTitle}>Error</Text>
-          <Text style={styles.errorMessage}>{error}</Text>
-          <Button
-            title="Go Back"
-            onPress={() => navigation.navigate('BooksOverview')}
-            style={styles.errorButton}
-          />
-        </View>
-      </SafeAreaView>
+      <ImageBackground 
+        source={require('../../assets/images/background_quiz.png')}
+        style={styles.container}
+        resizeMode="cover"
+      >
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorTitle}>Error</Text>
+            <Text style={styles.errorMessage}>{error}</Text>
+            <Button
+              title="Go Back"
+              onPress={() => navigation.navigate('BooksOverview')}
+              style={styles.errorButton}
+            />
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
     );
   }
 
   if (!book || !currentChapter) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.errorContainer}>
-          <Text style={styles.errorTitle}>Loading...</Text>
-        </View>
-      </SafeAreaView>
+      <ImageBackground 
+        source={require('../../assets/images/background_quiz.png')}
+        style={styles.container}
+        resizeMode="cover"
+      >
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorTitle}>Loading...</Text>
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
     );
   }
 
@@ -112,6 +124,7 @@ const ReadBookScreen = () => {
     <ImageBackground 
       source={require('../../assets/images/background_quiz.png')}
       style={styles.container}
+      resizeMode="cover"
     >
       <SafeAreaView style={styles.safeArea}>
         {/* Header */}
@@ -187,9 +200,12 @@ const ReadBookScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    height: '100%',
   },
   safeArea: {
     flex: 1,
+    backgroundColor: 'transparent',
   },
   header: {
     flexDirection: 'row',
@@ -197,9 +213,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12,
+    backgroundColor: 'transparent',
   },
   closeButton: {
     padding: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    borderRadius: 20,
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   closeButtonText: {
     fontSize: 20,
@@ -210,13 +233,17 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333',
     textAlign: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
   },
   spacer: {
     width: 36, // Match the width of the close button for centering
   },
   contentCard: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
     margin: 16,
     borderRadius: 16,
     padding: 20,
@@ -292,6 +319,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    margin: 16,
+    borderRadius: 16,
   },
   errorTitle: {
     fontSize: 24,

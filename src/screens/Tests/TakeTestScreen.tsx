@@ -119,6 +119,7 @@ const TakeTestScreen = () => {
     <ImageBackground 
       source={require('../../assets/images/background_quiz.png')}
       style={styles.container}
+      resizeMode="cover"
     >
       <SafeAreaView style={styles.safeArea}>
         {/* Header */}
@@ -179,12 +180,16 @@ const TakeTestScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    height: '100%',
   },
   safeArea: {
     flex: 1,
+    backgroundColor: 'transparent',
   },
   header: {
     paddingTop: 8,
+    backgroundColor: 'transparent',
   },
   headerContent: {
     flexDirection: 'row',
@@ -192,11 +197,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 8,
+    backgroundColor: 'transparent',
   },
   iconButton: {
     width: 32,
     height: 32,
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -223,14 +229,29 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     fontWeight: '500',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 12,
   },
   contentContainer: {
     flex: 1,
     padding: 16,
+    backgroundColor: 'transparent',
   },
   questionContainer: {
     marginBottom: 32,
-    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    padding: 20,
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   questionText: {
     fontSize: 24,

@@ -464,111 +464,129 @@ const TestResultScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        {error ? (
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorText}>{error}</Text>
-            <Button title="Go Back" onPress={handleFinish} />
-          </View>
-        ) : (
-          <>
-            {/* Header */}
-            <View style={styles.header}>
-              <SvgXml xml={logoSvg} width={40} height={40} />
-              <Text style={styles.headerTitle}>{test?.title || 'Test'} Results</Text>
+    <ImageBackground 
+      source={require('../../assets/images/background_quiz.png')}
+      style={styles.container}
+      resizeMode="cover"
+    >
+      <SafeAreaView style={styles.safeArea}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+          {error ? (
+            <View style={styles.errorContainer}>
+              <Text style={styles.errorText}>{error}</Text>
+              <Button title="Go Back" onPress={handleFinish} />
             </View>
-            
-            {/* Gauge */}
-            <SpeedometerSvg level={resultLevel} />
-            
-            {/* Results Card */}
-            <View style={styles.resultsCard}>
-              <Text style={styles.sectionTitle}>Interpretation</Text>
-              <Text style={styles.interpretationText}>{enhancedInterpretation}</Text>
+          ) : (
+            <>
+              {/* Header - Modified to stack logo and title vertically */}
+              <View style={styles.header}>
+                <SvgXml xml={logoSvg} width={40} height={40} />
+                <Text style={styles.headerTitle}>{test?.title || 'Test'} Results</Text>
+              </View>
               
-              <Text style={styles.sectionTitle}>Recommendation</Text>
-              <Text style={styles.recommendationText}>{enhancedRecommendations}</Text>
+              {/* Gauge */}
+              <SpeedometerSvg level={resultLevel} />
               
-              <Text style={styles.sectionTitle}>Breakdown</Text>
-              {result.breakdown.map((item, index) => (
-                <View key={index} style={styles.breakdownItem}>
-                  <Text style={styles.breakdownName}>{item.name}</Text>
-                  <View style={styles.breakdownBarContainer}>
-                    <View 
-                      style={[
-                        styles.breakdownBar, 
-                        { width: `${item.score * 100}%` },
-                        item.level === 'Low' ? styles.lowBar : 
-                        item.level === 'Moderate' ? styles.moderateBar : 
-                        styles.highBar
-                      ]} 
-                    />
+              {/* Results Card */}
+              <View style={styles.resultsCard}>
+                <Text style={styles.sectionTitle}>Interpretation</Text>
+                <Text style={styles.interpretationText}>{enhancedInterpretation}</Text>
+                
+                <Text style={styles.sectionTitle}>Recommendation</Text>
+                <Text style={styles.recommendationText}>{enhancedRecommendations}</Text>
+                
+                <Text style={styles.sectionTitle}>Breakdown</Text>
+                {result.breakdown.map((item, index) => (
+                  <View key={index} style={styles.breakdownItem}>
+                    <Text style={styles.breakdownName}>{item.name}</Text>
+                    <View style={styles.breakdownBarContainer}>
+                      <View 
+                        style={[
+                          styles.breakdownBar, 
+                          { width: `${item.score * 100}%` },
+                          item.level === 'Low' ? styles.lowBar : 
+                          item.level === 'Moderate' ? styles.moderateBar : 
+                          styles.highBar
+                        ]} 
+                      />
+                    </View>
+                    <Text style={[
+                      styles.breakdownLevel,
+                      item.level === 'Low' ? styles.lowLevelText : 
+                      item.level === 'Moderate' ? styles.moderateLevelText : 
+                      styles.highLevelText
+                    ]}>
+                      {item.level}
+                    </Text>
+                    
+                    {/* Add domain-specific interpretation */}
+                    <Text style={styles.domainInterpretation}>
+                      {item.level === 'Low' ? 
+                        `Your responses suggest minimal concerns in this area.` : 
+                      item.level === 'Moderate' ? 
+                        `Your responses indicate some challenges in this area that may benefit from attention.` : 
+                        `Your responses suggest significant challenges in this area that may require focused attention.`}
+                    </Text>
                   </View>
-                  <Text style={[
-                    styles.breakdownLevel,
-                    item.level === 'Low' ? styles.lowLevelText : 
-                    item.level === 'Moderate' ? styles.moderateLevelText : 
-                    styles.highLevelText
-                  ]}>
-                    {item.level}
-                  </Text>
-                  
-                  {/* Add domain-specific interpretation */}
-                  <Text style={styles.domainInterpretation}>
-                    {item.level === 'Low' ? 
-                      `Your responses suggest minimal concerns in this area.` : 
-                    item.level === 'Moderate' ? 
-                      `Your responses indicate some challenges in this area that may benefit from attention.` : 
-                      `Your responses suggest significant challenges in this area that may require focused attention.`}
-                  </Text>
-                </View>
-              ))}
-            </View>
-            
-            {/* Action Buttons */}
-            <View style={styles.actionButtons}>
-              <Button 
-                title="Share Results" 
-                onPress={handleShare}
-                style={styles.shareButton}
-              />
-              <Button 
-                title="Retake Test" 
-                onPress={handleRetakeTest}
-                style={styles.retakeButton}
-              />
-              <Button 
-                title="Finish" 
-                onPress={handleFinish}
-                style={styles.finishButton}
-              />
-            </View>
-          </>
-        )}
-      </ScrollView>
-    </SafeAreaView>
+                ))}
+              </View>
+              
+              {/* Action Buttons - Modified to have consistent width */}
+              <View style={styles.actionButtons}>
+                <TouchableOpacity 
+                  style={styles.actionButton}
+                  onPress={handleShare}
+                >
+                  <Text style={styles.actionButtonText}>Share Results</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity 
+                  style={[styles.actionButton, styles.retakeButton]}
+                  onPress={handleRetakeTest}
+                >
+                  <Text style={styles.actionButtonText}>Retake Test</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity 
+                  style={[styles.actionButton, styles.finishButton]}
+                  onPress={handleFinish}
+                >
+                  <Text style={styles.actionButtonText}>Finish</Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
+        </ScrollView>
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    width: '100%',
+    height: '100%',
+  },
+  safeArea: {
+    flex: 1,
+    marginHorizontal: 16,
   },
   scrollContent: {
     padding: 20,
+    paddingHorizontal: 24,
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 24,
+    paddingHorizontal: 8,
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginLeft: 12,
+    marginTop: 12,
     color: '#333',
+    textAlign: 'center',
   },
   errorContainer: {
     flex: 1,
@@ -617,8 +635,9 @@ const styles = StyleSheet.create({
   resultsCard: {
     backgroundColor: 'white',
     borderRadius: 12,
-    padding: 20,
+    padding: 24,
     marginBottom: 24,
+    marginHorizontal: 8,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -636,14 +655,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: '#555',
+    paddingHorizontal: 4,
   },
   recommendationText: {
     fontSize: 16,
     lineHeight: 24,
     color: '#555',
+    paddingHorizontal: 4,
   },
   breakdownItem: {
     marginVertical: 8,
+    paddingHorizontal: 4,
   },
   breakdownName: {
     fontSize: 16,
@@ -675,17 +697,26 @@ const styles = StyleSheet.create({
   },
   actionButtons: {
     marginBottom: 40,
+    marginHorizontal: 8,
   },
-  shareButton: {
+  actionButton: {
+    backgroundColor: '#0099CC',
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
     marginBottom: 12,
-    backgroundColor: '#4285F4',
+    width: '100%',
+  },
+  actionButtonText: {
+    color: 'white',
+    fontWeight: '600',
+    fontSize: 16,
   },
   retakeButton: {
-    marginBottom: 12,
-    backgroundColor: '#FFC72C',
+    backgroundColor: '#0099CC',
   },
   finishButton: {
-    backgroundColor: '#00D087',
+    backgroundColor: '#0099CC',
   },
   domainInterpretation: {
     fontSize: 14,

@@ -82,6 +82,7 @@ const BooksScreen = () => {
     <ImageBackground 
       source={require('../../assets/images/background_quiz.png')}
       style={styles.container}
+      resizeMode="cover"
     >
       <SafeAreaView style={styles.safeArea}>
         <FlatList
@@ -155,16 +156,22 @@ const BooksScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    height: '100%',
   },
   safeArea: {
     flex: 1,
     paddingHorizontal: 45,
     paddingTop: 25,
+    backgroundColor: 'transparent',
   },
   header: {
     marginBottom: 24,
     paddingTop: 12,
     paddingHorizontal: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    borderRadius: 12,
+    padding: 12,
   },
   progressText: {
     fontSize: 14,
