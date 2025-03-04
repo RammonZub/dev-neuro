@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   resultCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: 'rgba(252, 249, 241, 0.95)',
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',

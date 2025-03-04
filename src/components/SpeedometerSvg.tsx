@@ -1,18 +1,6 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, Share, ImageBackground } from 'react-native';
-import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import React from 'react';
 import { SvgXml } from 'react-native-svg';
-
-import Button from '../../components/Button';
-import { calculateTestScore } from '../../data/quizData';
-import { saveTestResult } from '../../utils/storage';
-import { TESTS, TEST_QUESTIONS } from '../../data/quizData';
-import { TestResult as TestResultType } from '../../types';
-import SpeedometerSvg from '../../components/SpeedometerSvg';
-
-// Import SVG strings
-import { logoSvg } from '../../assets/svgs';
+import { View, Text, StyleSheet } from 'react-native';
 
 // Define speedometer SVG strings with unique IDs
 const speedometerGreenSvg = `<svg width="190" height="148" viewBox="0 0 190 148" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,259 +122,76 @@ const speedometerRedSvg = `<svg width="190" height="157" viewBox="0 0 190 157" f
 </defs>
 </svg>`;
 
-type TestsStackParamList = {
-  TestsOverview: undefined;
-  TakeTest: { testId: string };
-  TestResult: { testId: string; answers: Record<string, number> };
+// Helper function to get the appropriate SVG based on level
+const getSpeedometerSvg = (level: string): string => {
+  try {
+    if (level === 'Low') {
+      return speedometerGreenSvg;
+    } else if (level === 'Moderate') {
+      return speedometerYellowSvg;
+    } else if (level === 'High') {
+      return speedometerRedSvg;
+    } else {
+      console.log(`Unknown level: ${level}`);
+      return speedometerYellowSvg; // Default to yellow as a fallback
+    }
+  } catch (error) {
+    console.error('Error getting speedometer SVG:', error);
+    return speedometerYellowSvg; // Default to yellow as a fallback
+  }
 };
 
-type TestResultScreenNavigationProp = StackNavigationProp<TestsStackParamList, 'TestResult'>;
-type TestResultScreenRouteProp = RouteProp<TestsStackParamList, 'TestResult'>;
+interface SpeedometerProps {
+  level: string;
+}
 
-const TestResultScreen = () => {
-  const navigation = useNavigation<TestResultScreenNavigationProp>();
-  const route = useRoute<TestResultScreenRouteProp>();
-  const { testId, answers } = route.params;
-  const [error, setError] = useState<string | null>(null);
-  const [savedResult, setSavedResult] = useState(false);
-  
-  // Get test info
-  const test = TESTS.find(t => t.id === testId);
-  
-  // Validate that we have questions for this test
-  useEffect(() => {
-    const questions = TEST_QUESTIONS[testId];
-    if (!questions || questions.length === 0) {
-      setError(`No questions found for test ID: ${testId}`);
-    }
-  }, [testId]);
-  
-  // Calculate the test score
-  const { score, interpretation, recommendation } = useMemo(() => {
-    try {
-      return calculateTestScore(testId, answers);
-    } catch (err) {
-      setError(`Error calculating test score: ${err}`);
-      return { 
-        score: 0, 
-        interpretation: 'Error calculating results', 
-        recommendation: 'Please try again later' 
-      };
-    }
-  }, [testId, answers]);
-  
-  // Calculate normalized score (0-1) for the gauge
-  const normalizedScore = useMemo(() => {
-    const questions = TEST_QUESTIONS[testId];
-    if (!questions) return 0;
+const SpeedometerSvg: React.FC<SpeedometerProps> = ({ level }) => {
+  try {
+    const svgString = getSpeedometerSvg(level);
     
-    // Calculate max possible score (assuming max value per question is 4)
-    const maxPossibleScore = questions.length * 4;
-    return maxPossibleScore > 0 ? score / maxPossibleScore : 0;
-  }, [testId, score]);
-  
-  // Determine level based on normalized score
-  const getLevel = (score: number): string => {
-    if (score < 0.3) return 'Low';
-    if (score < 0.7) return 'Moderate';
-    return 'High';
-  };
-  
-  // Get the result level
-  const resultLevel = getLevel(normalizedScore);
-  
-  // Calculate breakdown scores based on question categories
-  const calculateBreakdown = () => {
-    const questions = TEST_QUESTIONS[testId];
-    if (!questions) return [];
-    
-    // Group questions by category (using domain as category)
-    const categories: Record<string, { total: number, count: number }> = {};
-    
-    questions.forEach((q, index) => {
-      const category = q.domain || 'General';
-      const answerValue = answers[q.id] || 0;
-      
-      if (!categories[category]) {
-        categories[category] = { total: 0, count: 0 };
-      }
-      
-      categories[category].total += answerValue;
-      categories[category].count += 1;
-    });
-    
-    // Calculate average score for each category
-    return Object.entries(categories).map(([name, { total, count }]) => {
-      const avgScore = count > 0 ? total / count : 0;
-      const normalizedCategoryScore = avgScore / 4; // Assuming 4 is max score per question
-      return {
-        name,
-        score: normalizedCategoryScore,
-        level: getLevel(normalizedCategoryScore)
-      };
-    });
-  };
-  
-  // Create result object with breakdown for the test
-  const result: TestResultType = {
-    overall: normalizedScore,
-    breakdown: calculateBreakdown(),
-    interpretation,
-    recommendation
-  };
-  
-  // Save result to local storage
-  const saveResult = async () => {
-    try {
-      await saveTestResult(testId, result);
-      setSavedResult(true);
-    } catch (err) {
-      console.error('Error saving test result:', err);
-      setError('Failed to save your results. Please try again.');
-    }
-  };
-  
-  // Save result when component mounts
-  useEffect(() => {
-    if (testId && result && !error && !savedResult) {
-      saveResult();
-    }
-  }, [testId, result, error, savedResult]);
-  
-  // Handle sharing results
-  const handleShare = async () => {
-    try {
-      await Share.share({
-        message: `I just took the ${test?.title} test and got a ${resultLevel} result! Check out the Neuro app to take it yourself.`,
-      });
-    } catch (error) {
-      console.error('Error sharing results:', error);
-    }
-  };
-  
-  // Handle retaking the test
-  const handleRetakeTest = () => {
-    navigation.navigate('TakeTest', { testId });
-  };
-  
-  // Handle finishing and going back to tests overview
-  const handleFinish = () => {
-    navigation.navigate('TestsOverview');
-  };
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        {error ? (
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorText}>{error}</Text>
-            <Button title="Go Back" onPress={handleFinish} />
-          </View>
-        ) : (
-          <>
-            {/* Header */}
-            <View style={styles.header}>
-              <SvgXml xml={logoSvg} width={40} height={40} />
-              <Text style={styles.headerTitle}>{test?.title || 'Test'} Results</Text>
-            </View>
-            
-            {/* Gauge */}
-            <SpeedometerSvg level={resultLevel} />
-            
-            {/* Results Card */}
-            <View style={styles.resultsCard}>
-              <Text style={styles.sectionTitle}>Interpretation</Text>
-              <Text style={styles.interpretationText}>{interpretation}</Text>
-              
-              <Text style={styles.sectionTitle}>Recommendation</Text>
-              <Text style={styles.recommendationText}>{recommendation}</Text>
-              
-              <Text style={styles.sectionTitle}>Breakdown</Text>
-              {result.breakdown.map((item, index) => (
-                <View key={index} style={styles.breakdownItem}>
-                  <Text style={styles.breakdownName}>{item.name}</Text>
-                  <View style={styles.breakdownBarContainer}>
-                    <View 
-                      style={[
-                        styles.breakdownBar, 
-                        { width: `${item.score * 100}%` },
-                        item.level === 'Low' ? styles.lowBar : 
-                        item.level === 'Moderate' ? styles.moderateBar : 
-                        styles.highBar
-                      ]} 
-                    />
-                  </View>
-                  <Text style={[
-                    styles.breakdownLevel,
-                    item.level === 'Low' ? styles.lowLevelText : 
-                    item.level === 'Moderate' ? styles.moderateLevelText : 
-                    styles.highLevelText
-                  ]}>
-                    {item.level}
-                  </Text>
-                </View>
-              ))}
-            </View>
-            
-            {/* Action Buttons */}
-            <View style={styles.actionButtons}>
-              <Button 
-                title="Share Results" 
-                onPress={handleShare}
-                style={styles.shareButton}
-              />
-              <Button 
-                title="Retake Test" 
-                onPress={handleRetakeTest}
-                style={styles.retakeButton}
-              />
-              <Button 
-                title="Finish" 
-                onPress={handleFinish}
-                style={styles.finishButton}
-              />
-            </View>
-          </>
-        )}
-      </ScrollView>
-    </SafeAreaView>
-  );
+    return (
+      <View style={styles.container}>
+        <SvgXml xml={svgString} width={190} height={148} />
+        <View style={styles.gaugeLabels}>
+          <Text style={styles.lowLabel}>Low</Text>
+          <Text style={styles.highLabel}>High</Text>
+        </View>
+        <Text style={[
+          styles.resultLevelText,
+          level === 'Low' ? styles.lowLevelText : 
+          level === 'Moderate' ? styles.moderateLevelText : 
+          styles.highLevelText
+        ]}>
+          {level}
+        </Text>
+      </View>
+    );
+  } catch (error) {
+    console.error('Error rendering speedometer:', error);
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>Error displaying result</Text>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f8f9fa',
-  },
-  scrollContent: {
-    padding: 20,
-  },
-  header: {
-    flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 24,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginLeft: 12,
-    color: '#333',
+    justifyContent: 'center',
+    marginVertical: 20,
   },
   errorContainer: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    justifyContent: 'center',
+    height: 148,
+    marginVertical: 20,
   },
   errorText: {
     color: '#FF284C',
     fontSize: 16,
     textAlign: 'center',
-    marginBottom: 20,
-  },
-  gaugeContainer: {
-    alignItems: 'center',
-    marginBottom: 32,
   },
   gaugeLabels: {
     flexDirection: 'row',
@@ -416,79 +221,6 @@ const styles = StyleSheet.create({
   highLevelText: {
     color: '#FF284C',
   },
-  resultsCard: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 20,
-    marginBottom: 24,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    marginTop: 16,
-    color: '#333',
-  },
-  interpretationText: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#555',
-  },
-  recommendationText: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#555',
-  },
-  breakdownItem: {
-    marginVertical: 8,
-  },
-  breakdownName: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 4,
-  },
-  breakdownBarContainer: {
-    height: 8,
-    backgroundColor: '#f0f0f0',
-    borderRadius: 4,
-    marginVertical: 6,
-  },
-  breakdownBar: {
-    height: '100%',
-    borderRadius: 4,
-  },
-  lowBar: {
-    backgroundColor: '#00D087',
-  },
-  moderateBar: {
-    backgroundColor: '#FFC72C',
-  },
-  highBar: {
-    backgroundColor: '#FF284C',
-  },
-  breakdownLevel: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  actionButtons: {
-    marginBottom: 40,
-  },
-  shareButton: {
-    marginBottom: 12,
-    backgroundColor: '#4285F4',
-  },
-  retakeButton: {
-    marginBottom: 12,
-    backgroundColor: '#FFC72C',
-  },
-  finishButton: {
-    backgroundColor: '#00D087',
-  },
 });
 
-export default TestResultScreen; 
+export default SpeedometerSvg; 
